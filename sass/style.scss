@@ -14,9 +14,9 @@ $space-xxl: 2.5rem; // 40px
 $space-xxxl: 3rem; // 48px
 
 // --- Colors ---
+$color-main: #000041;
 $color-text: #000041;
 $color-base: #000;
-$color-main: #000;
 $color-accent: #000;
 $color-bg: #000;
 
@@ -73,6 +73,14 @@ $breakpoints: (
 // インナー幅の指定
 // @param {number} $mw - max-width
 // @param {number} $w  - width
+
+@mixin main-inner($mw: 980px, $w: 95%) {
+    max-width: $mw;
+    width: $w;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 @mixin inner($mw: 900px, $w: 95%) {
     max-width: $mw;
     width: $w;
@@ -88,7 +96,7 @@ $breakpoints: (
 }
 
 @mixin title () {
-    color: $color-text;
+    color: $color-main;
     padding-top: rem(90);
     writing-mode: vertical-rl;
     font-size: rem(12);
@@ -124,13 +132,76 @@ $breakpoints: (
 //     transition: opacity 0.4s ease;
 // }
 
+.header {
+    &__inner {
+        @include side-inner();
+    }
+
+    &__title {
+        @include title();
+    }
+
+    &__nav {
+        position: fixed;
+
+        &--list {
+            margin-top: rem(430);
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            position: relative;
+            padding-left: rem(40);
+            margin-bottom: rem(16);
+            font-size: rem(16);
+
+            a {
+                color: $color-main;
+                text-decoration: none;
+                display: inline-block;
+
+
+                &:hover {
+                    font-weight: bold;
+                }
+
+                &.is-active {
+                    font-weight: bold;
+                }
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: 1%;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 20px;
+                height: 1px;
+                background-color: $color-main;
+                opacity: 0;
+                transition: opacity 0.3s;
+            }
+
+            &:hover::before {
+                opacity: 1;
+            }
+
+            &.is-active::before {
+                opacity: 1;
+            }
+        }
+    }
+}
+
 .toc-btn {
     position: fixed;
     top: 40px;
     right: 40px;
     width: 70px;
     height: 70px;
-    border: 1px solid $color-text;
+    border: 1px solid $color-main;
     border-radius: 50%;
     background: transparent;
     cursor: pointer;
@@ -148,7 +219,7 @@ $breakpoints: (
 }
 
 .footer {
-    color: $color-text;
+    color: $color-main;
 
     &__inner {
         width: 90%;
@@ -185,7 +256,7 @@ $breakpoints: (
                 transform: translateX(-50%);
                 width: 1px;
                 height: 20px;
-                background-color: #000;
+                background-color: $color-main;
             }
         }
     }
@@ -198,7 +269,7 @@ $breakpoints: (
         max-width: 350px;
         padding: rem(10) rem(45);
         border-radius: rem(40);
-        border: 1px solid $color-text;
+        border: 1px solid $color-main;
     }
 
     &__copy {
@@ -210,70 +281,69 @@ $breakpoints: (
 }
 
 // =================================================================
-//  works
+//  single
 // =================================================================
-.header {
+
+.mainvisual {
     &__inner {
-        @include side-inner();
+        @include main-inner();
+        display: grid;
+        grid-template-columns: 430fr 550fr;
+    }
+
+    &__titles {
+        margin-top: rem(380);
+        align-items: center;
     }
 
     &__title {
-        @include title();
+        font-size: rem(30);
+        font-weight: bold;
     }
 
-    &__nav {
-        position: fixed;
+    &__tag {
+        font-size: rem(14);
+    }
+}
 
-        &--list {
-            margin-top: rem(430);
-            list-style: none;
-            padding: 0;
-        }
+.explanation {
+    &__inner {
+        @include main-inner();
+    }
 
-        li {
-            position: relative;
-            padding-left: rem(40);
-            margin-bottom: rem(16);
-            font-size: rem(16);
+    &__title {
+        font-size: rem(28);
+        font-weight: bold;
+        margin-top: rem(140);
+        padding-bottom: rem(10);
+        margin-bottom: rem(10);
+        border-bottom: 1px solid $color-main;
+    }
 
-            a {
-                color: $color-text;
-                text-decoration: none;
-                display: inline-block;
+    &__tag {
+        font-size: rem(18);
+    }
 
+    &__heading {
+        position: relative;
+        font-size: rem(20);
 
-                &:hover {
-                    font-weight: bold;
-                }
-
-                &.is-active {
-                    font-weight: bold;
-                }
-            }
-
-            &::before {
-                content: "";
-                position: absolute;
-                left: 1%;
-                top: 50%;
-                transform: translateY(-50%);
-                width: 20px;
-                height: 1px;
-                background-color: $color-text;
-                opacity: 0;
-                transition: opacity 0.3s;
-            }
-
-            &:hover::before {
-                opacity: 1;
-            }
-
-            &.is-active::before {
-                opacity: 1;
-            }
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 1px;
+            height: 20px;
+            background-color: $color-main;
         }
     }
 }
+
+// =================================================================
+//  works
+// =================================================================
+
 
 .works {
     padding-top: rem(350);
@@ -298,7 +368,7 @@ $breakpoints: (
         font-size: rem(16);
         margin-bottom: rem(7);
         padding-bottom: rem(7);
-        border-bottom: 1px solid $color-text;
+        border-bottom: 1px solid $color-main;
     }
 
     &__tag {
