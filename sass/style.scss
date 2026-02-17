@@ -14,7 +14,7 @@ $space-xxl: 2.5rem; // 40px
 $space-xxxl: 3rem; // 48px
 
 // --- Colors ---
-$color-text: #000;
+$color-text: #000041;
 $color-base: #000;
 $color-main: #000;
 $color-accent: #000;
@@ -73,20 +73,163 @@ $breakpoints: (
 // インナー幅の指定
 // @param {number} $mw - max-width
 // @param {number} $w  - width
-@mixin inner($mw: 1000px, $w: 90%) {
+@mixin inner($mw: 900px, $w: 95%) {
     max-width: $mw;
     width: $w;
     margin-left: auto;
     margin-right: auto;
 }
 
+@mixin side-inner($mw: 1280px, $w: 95%) {
+    max-width: $mw;
+    width: $w;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@mixin title () {
+    color: $color-text;
+    padding-top: rem(90);
+    writing-mode: vertical-rl;
+    font-size: rem(12);
+    font-weight: bold;
+    letter-spacing: 0.4em;
+    position: fixed;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 1px;
+        height: 80px;
+        background-color: #000;
+    }
+}
+
+// =================================================================
+//  共通部分
+// =================================================================
+.toc-btn {
+    position: fixed;
+    top: 40px;
+    right: 40px;
+    width: 70px;
+    height: 70px;
+    border: 1px solid $color-text;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span {
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        font-size: rem(12);
+        letter-spacing: 0.2em;
+    }
+}
+
 // =================================================================
 //  works
 // =================================================================
+.header {
+    &__inner {
+        @include side-inner();
+    }
 
-.title {
-    writing-mode: vertical-rl;
-    text-orientation: upright;
-    letter-spacing: 4px;
-    height: 300px;
+    &__title {
+        @include title();
+    }
+
+    &__nav {
+        position: fixed;
+
+        &--list {
+            margin-top: rem(430);
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            position: relative;
+            padding-left: rem(40);
+            margin-bottom: rem(16);
+            font-size: rem(12);
+
+            a {
+                color: $color-text;
+                text-decoration: none;
+                display: inline-block;
+
+
+                &:hover {
+                    font-weight: bold;
+                }
+
+                &.is-active {
+                    font-weight: bold;
+                }
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: 1%;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 20px;
+                height: 1px;
+                background-color: $color-text;
+                opacity: 0;
+                transition: opacity 0.3s;
+            }
+
+            &:hover::before {
+                opacity: 1;
+            }
+
+            &.is-active::before {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.works {
+    padding-top: rem(350);
+    padding-left: rem(100);
+
+    &__inner {
+        @include inner();
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: rem(100);
+        row-gap: rem(100);
+        margin: 0 auto;
+    }
+}
+
+.post {
+    &__img {
+        margin-bottom: rem(25);
+    }
+
+    &__title {
+        font-size: rem(16);
+        margin-bottom: rem(7);
+        padding-bottom: rem(7);
+        border-bottom: 1px solid $color-text;
+    }
+
+    &__tag {
+        font-size: rem(12);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: rem(20);
+    }
 }
