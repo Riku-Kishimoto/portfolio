@@ -280,6 +280,28 @@ $breakpoints: (
     }
 }
 
+.list {
+
+    &__title {
+        font-size: rem(16);
+        font-weight: bold;
+    }
+
+    &__item {
+        display: grid;
+        grid-template-columns: 1fr 4fr;
+        column-gap: rem(40);
+        row-gap: rem(40);
+        border-bottom: 1px dotted $color-main;
+        padding-top: rem(15);
+        padding-bottom: rem(15);
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+}
+
 // =================================================================
 //  single
 // =================================================================
@@ -311,6 +333,13 @@ $breakpoints: (
         @include main-inner();
     }
 
+    &__about {
+        display: grid;
+        grid-template-columns: 450fr 490fr;
+        column-gap: rem(100);
+        margin-top: rem(100);
+    }
+
     &__title {
         font-size: rem(28);
         font-weight: bold;
@@ -320,21 +349,38 @@ $breakpoints: (
         border-bottom: 1px solid $color-main;
     }
 
+    &__subtitle {
+        margin-top: rem(100);
+        margin-bottom: rem(30);
+        padding: rem(5) rem(13) rem(5);
+        font-size: rem(20);
+        font-weight: bold;
+        border: 1px solid $color-main;
+    }
+
     &__tag {
         font-size: rem(18);
+    }
+
+    &__version {
+        display: grid;
+        row-gap: rem(50);
     }
 
     &__heading {
         position: relative;
         font-size: rem(20);
+        font-weight: bold;
+        margin-bottom: rem(15);
+        margin-left: rem(30);
 
         &::before {
             content: "";
             position: absolute;
-            top: 0px;
-            left: 0px;
-            width: 1px;
-            height: 20px;
+            top: 15px;
+            left: -30px;
+            width: 25px;
+            height: 2px;
             background-color: $color-main;
         }
     }
