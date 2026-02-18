@@ -302,6 +302,90 @@ $breakpoints: (
     }
 }
 
+.color {
+    margin-top: rem(50);
+
+    &__title {
+        font-size: rem(18);
+        margin-bottom: rem(40);
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        gap: rem(30);
+    }
+
+    &__items {
+        display: grid;
+        row-gap: rem(30);
+    }
+
+    &__swatch {
+        width: rem(60);
+        height: rem(60);
+        border: 1px solid #000;
+
+        &--main {
+            background-color: #FFD75F;
+        }
+
+        &--accent {
+            background-color: #FEF6D7;
+        }
+
+        &--text {
+            background-color: #001F3F;
+        }
+
+        &--base {
+            background-color: #FFFFFF;
+        }
+    }
+
+    &__name {
+        color: #C2C2C2;
+        font-size: rem(12);
+        font-weight: bold;
+        letter-spacing: 0.1em;
+    }
+
+    &__code {
+        color: $color-main;
+        font-size: rem(16);
+        margin-top: rem(6);
+    }
+}
+
+.layout {
+    &__title {
+        font-size: rem(20);
+        font-weight: bold;
+    }
+}
+
+.pc-scroll ul {
+    padding: 0;
+    margin-top: rem(20);
+    list-style: none;
+    width: rem(450);
+    aspect-ratio: 450 / 400;
+    border-radius: rem(20);
+    border: solid 0.5px $color-main;
+    overflow-y: auto;
+}
+
+.pc-scroll img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 // =================================================================
 //  single
 // =================================================================
@@ -383,6 +467,20 @@ $breakpoints: (
             height: 2px;
             background-color: $color-main;
         }
+    }
+
+    &__color {
+        display: grid;
+        grid-template-columns: 450fr 490fr;
+        column-gap: rem(100);
+    }
+
+    &__layout {
+        margin-top: rem(50);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: rem(80);
+        row-gap: rem(50);
     }
 }
 
