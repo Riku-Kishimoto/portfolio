@@ -218,8 +218,84 @@ $breakpoints: (
     }
 }
 
+.toc-close {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    width: 70px;
+    height: 70px;
+    border: 1px solid $color-main;
+    border-radius: 50%;
+    background: transparent;
+    color: $color-main;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: rem(12);
+    letter-spacing: 0.2em;
+}
+
+.toc {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    padding: 120px 40px;
+    background-color: #fff;
+    transform: translateX(100%);
+    transition: transform 0.5s cubic-bezier(.22, 1, .36, 1);
+
+    z-index: 999;
+}
+
+.toc.active {
+    transform: translateX(0);
+}
+
+.toc ul {
+    list-style: none;
+    padding: 0;
+}
+
+.toc li {
+    margin-bottom: 24px;
+}
+
+.toc a {
+    text-decoration: none;
+    font-size: rem(16);
+}
+
+.toc-overlay {
+    position: fixed;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s ease;
+    z-index: 998;
+}
+
+.toc-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.toc-btn.active {
+    background: $color-main;
+
+    span {
+        color: #fff;
+    }
+}
+
+
+
 .footer {
     color: $color-main;
+    padding-bottom: rem(50);
 
     &__inner {
         width: 90%;
@@ -236,6 +312,30 @@ $breakpoints: (
         column-gap: 40px;
     }
 
+    &__mail {
+        display: inline-block;
+        margin-bottom: rem(120);
+        font-size: rem(18);
+        text-align: center;
+        max-width: 350px;
+        padding: rem(10) rem(45);
+        border-radius: rem(40);
+        border: 1px solid $color-main;
+
+        &:hover {
+            color: #FFFFFF;
+            background-color: $color-main;
+        }
+    }
+
+    &__copy {
+        text-align: center;
+        font-size: rem(12);
+        font-weight: bold;
+    }
+}
+
+.nav {
     &__navlist {
         writing-mode: vertical-rl;
 
@@ -259,24 +359,6 @@ $breakpoints: (
                 background-color: $color-main;
             }
         }
-    }
-
-    &__mail {
-        display: inline-block;
-        margin-bottom: rem(120);
-        font-size: rem(18);
-        text-align: center;
-        max-width: 350px;
-        padding: rem(10) rem(45);
-        border-radius: rem(40);
-        border: 1px solid $color-main;
-    }
-
-    &__copy {
-        margin-bottom: rem(50);
-        text-align: center;
-        font-size: rem(12);
-        font-weight: bold;
     }
 }
 
@@ -477,6 +559,8 @@ $breakpoints: (
 
     &__layout {
         margin-top: rem(50);
+        margin-right: rem(5);
+        margin-left: rem(5);
         display: grid;
         grid-template-columns: 1fr 1fr;
         column-gap: rem(80);

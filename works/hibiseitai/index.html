@@ -17,6 +17,22 @@
             <button class="toc-btn" aria-label="目次を開く">
                 <span>目次</span>
             </button>
+
+            <nav class="toc nav">
+                <button class="toc-close">CLOSE</button>
+                <ul class="nav__navlist">
+                    <li><a href="#">トップ</a></li>
+                    <li><a href="#">作ったもの・デザインしたもの</a></li>
+                    <li class="nav__navlist--work"><a href="#">Ｗｅｂデザイン</a></li>
+                    <li class="nav__navlist--work"><a href="#">ＵＩ・ＵＸデザイン</a></li>
+                    <li class="nav__navlist--work"><a href="#">グラフィックデザイン</a></li>
+                    <li><a href="#">わたしについて</a></li>
+                    <li><a href="#">ブログ</a></li>
+                    <li><a href="#">お問い合わせ</a></li>
+                </ul>
+            </nav>
+
+            <div class="toc-overlay"></div>
         </div>
     </header>
 
@@ -57,8 +73,8 @@
                         <div class="explanation__item">
                             <h4 class="explanation__heading">クライアント紹介</h4>
                             <div class="explanation__text">
-                                <p>愛知県春日井市にある「日比整体 だいせんじ接骨院」様にご協力いただきリニューアルサイトの制作を行わせて頂きました。
-                                    整体と接骨院を併設している院の特性に合わせ、初めてサイトを訪れた方でも迷わず必要な情報にたどり着けるよう情報整理を行い、直感的に利用できるデザインを心がけました。
+                                <p>日比整体
+                                    だいせんじ接骨院は、春日井市で40年以上続く、整体と接骨院を併設した地域密着型の施術院です。国家資格を持つ施術者による丁寧なバランス調整や、肩こり・腰痛・姿勢の悩みに応える施術が特長で、交通事故治療や保険対応施術も行っています。患者一人ひとりに寄り添い、笑顔を取り戻すサポートを大切にしています。
                                 </p>
                             </div>
                         </div>
@@ -97,8 +113,11 @@
                             <div class="explanation__item">
                                 <h4 class="explanation__heading">配色について</h4>
                                 <div class="explanation__text">
-                                    <p>愛知県春日井市にある「日比整体 だいせんじ接骨院」様にご協力いただきリニューアルサイトの制作を行わせて頂きました。
-                                        整体と接骨院を併設している院の特性に合わせ、初めてサイトを訪れた方でも迷わず必要な情報にたどり着けるよう情報整理を行い、直感的に利用できるデザインを心がけました。
+                                    <p>ブランドカラーである黄色を基調に、明るさと親しみやすさを表現しながら、整体院としての安心感と信頼感が伝わる配色設計を行いました。
+
+                                        文字色には黒ではなく紺色を使用することで、可読性を確保しつつ、やわらかく落ち着いた印象を与えています。
+
+                                        強いコントラストになりすぎないよう配慮し、長時間読んでも疲れにくいデザインを意識しました。
                                     </p>
                                 </div>
                             </div>
@@ -143,8 +162,9 @@
                         <div class="explanation__item">
                             <h4 class="explanation__heading">レイアウト</h4>
                             <div class="explanation__text">
-                                <p>愛知県春日井市にある「日比整体 だいせんじ接骨院」様にご協力いただきリニューアルサイトの制作を行わせて頂きました。
-                                    整体と接骨院を併設している院の特性に合わせ、初めてサイトを訪れた方でも迷わず必要な情報にたどり着けるよう情報整理を行い、直感的に利用できるデザインを心がけました。
+                                <p>整体と接骨院の違いが直感的に伝わるよう、トップページでは内容を縦並びに配置し、特徴を比較しやすい構成にしました。
+                                    シングルページではセクションごとに明確に区切ることで、直感的に情報のポイントを把握できるレイアウトを設計しています。
+                                    見出しや余白で情報を整理し、スクロールしながらでも現在地が分かりやすい構成を意識しました。
                                 </p>
                             </div>
                             <div class="explanation__layout">
@@ -191,21 +211,33 @@
                             </div>
                         </div>
                     </div>
-            </div>
-            </article>
+                </article>
+                <article class="explanation__commitment">
+                    <h4 class="explanation__subtitle">こだわったところ</h4>
+                    <div class="explanation__item">
+                        <h4 class="explanation__heading">情報設計</h4>
+                        <div class="explanation__text">
+                            <p>整体と接骨院の違いが分からず迷う方が多いという課題を受け、それぞれの強みや施術内容が明確に伝わる情報設計を行いました。
+                                トップページでは違いを簡潔に説明し、利用者が抱きやすい基本的な疑問に対応する構成としています。
+                                個別ページでは施術内容や対応症状を詳しく解説し、来院時の判断材料となる情報を整理しました。
+                                また、閲覧中に必要と感じた情報へすぐにアクセスできるよう、各セクションから関連ページへ遷移できる導線を設けています。
+                            </p>
+                        </div>
+                    </div>
+                </article>
             </div>
         </section>
     </main>
 
     <footer class="footer">
         <div class="footer__inner">
-            <nav class="footer__nav">
-                <ul class="footer__navlist">
+            <nav class="footer__nav nav">
+                <ul class="nav__navlist">
                     <li><a href="#">トップ</a></li>
                     <li><a href="#">作ったもの・デザインしたもの</a></li>
-                    <li class="footer__navlist--work"><a href="#">Ｗｅｂデザイン</a></li>
-                    <li class="footer__navlist--work"><a href="#">ＵＩ・ＵＸデザイン</a></li>
-                    <li class="footer__navlist--work"><a href="#">グラフィックデザイン</a></li>
+                    <li class="nav__navlist--work"><a href="#">Ｗｅｂデザイン</a></li>
+                    <li class="nav__navlist--work"><a href="#">ＵＩ・ＵＸデザイン</a></li>
+                    <li class="nav__navlist--work"><a href="#">グラフィックデザイン</a></li>
                     <li><a href="#">わたしについて</a></li>
                     <li><a href="#">ブログ</a></li>
                     <li><a href="#">お問い合わせ</a></li>
@@ -220,6 +252,7 @@
         </div>
         </div>
     </footer>
+    <script src="../../js/style.js"></script>
 </body>
 
 </html>
