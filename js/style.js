@@ -1,19 +1,15 @@
-// const btn = document.querySelector(".toc-btn");
-// const toc = document.querySelector(".toc");
-// const overlay = document.querySelector(".toc-overlay");
+//footer表示時header非表示
+const header = document.querySelector('.header');
+const footer = document.querySelector('.footer');
 
-// btn.addEventListener("click", () => {
-//     btn.classList.toggle("active");
-//     toc.classList.toggle("active");
-//     overlay.classList.toggle("active");
-// });
+const observer = new IntersectionObserver(([entry]) => {
+    header.classList.toggle('header--hidden', entry.isIntersecting);
+});
 
-// overlay.addEventListener("click", () => {
-//     btn.classList.remove("active");
-//     toc.classList.remove("active");
-//     overlay.classList.remove("active");
-// });
+observer.observe(footer);
 
+
+//ハンバーガーメニュー
 const tocBtn = document.querySelector('.toc-btn');
 const toc = document.querySelector('.toc');
 const overlay = document.querySelector('.toc-overlay');
@@ -33,3 +29,4 @@ overlay.addEventListener('click', () => {
     toc.classList.remove('active');
     overlay.classList.remove('active');
 });
+//ハンバーガーメニューここまで

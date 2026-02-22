@@ -6,21 +6,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>R.FOLIO</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/the-new-css-reset/css/reset.min.css">
-    <link rel="stylesheet" href="./css/style.min.css">
+    <link rel="stylesheet" href="../css/style.min.css">
 </head>
 
 <body>
     <header class="header">
+        <div class="header__inner">
 
+            <h1 class="header__title">わたしについて</h1>
+            <button class="toc-btn" aria-label="目次を開く">
+                <span>目次</span>
+            </button>
+
+            <nav class="toc nav">
+                <button class="toc-close">CLOSE</button>
+                <ul class="nav__navlist">
+                    <li><a href="#">トップ</a></li>
+                    <li><a href="#">作ったもの・デザインしたもの</a></li>
+                    <li class="nav__navlist--work"><a href="#">Ｗｅｂデザイン</a></li>
+                    <li class="nav__navlist--work"><a href="#">ＵＩ・ＵＸデザイン</a></li>
+                    <li class="nav__navlist--work"><a href="#">グラフィックデザイン</a></li>
+                    <li><a href="#">わたしについて</a></li>
+                    <li><a href="#">ブログ</a></li>
+                    <li><a href="#">お問い合わせ</a></li>
+                </ul>
+            </nav>
+
+            <div class="toc-overlay"></div>
+        </div>
     </header>
 
     <main class="main">
-
+        <img src="" alt="" height="3000px" width="3000px">
     </main>
 
     <footer class="footer">
-
+        <div class="footer__inner">
+            <nav class="footer__nav nav">
+                <ul class="nav__navlist">
+                    <li><a href="#">トップ</a></li>
+                    <li><a href="#">作ったもの・デザインしたもの</a></li>
+                    <li class="nav__navlist--work"><a href="#">Ｗｅｂデザイン</a></li>
+                    <li class="nav__navlist--work"><a href="#">ＵＩ・ＵＸデザイン</a></li>
+                    <li class="nav__navlist--work"><a href="#">グラフィックデザイン</a></li>
+                    <li><a href="#">わたしについて</a></li>
+                    <li><a href="#">ブログ</a></li>
+                    <li><a href="#">お問い合わせ</a></li>
+                </ul>
+            </nav>
+            <div class="footer__mail">
+                <a href="mailto:riku.kishimoto22@gmail.com">riku.kishimoto22@gmail.com</a>
+            </div>
+        </div>
+        <div class="footer__copy">
+            <p>&copy; R.FOLIO</p>
+        </div>
+        </div>
     </footer>
+    <script src="../../js/style.js"></script>
 </body>
 
 </html>
