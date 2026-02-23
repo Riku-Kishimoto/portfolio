@@ -230,10 +230,10 @@ body.no-scroll {
     border-radius: 50%;
     background: transparent;
     cursor: pointer;
-
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 1000;
 
     span {
         writing-mode: vertical-rl;
@@ -241,25 +241,27 @@ body.no-scroll {
         font-size: rem(12);
         letter-spacing: 0.2em;
     }
-}
 
-.toc-close {
-    position: absolute;
-    top: 40px;
-    right: 40px;
-    width: 70px;
-    height: 70px;
-    border: 1px solid $color-main;
-    border-radius: 50%;
-    background: transparent;
-    color: $color-main;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    .toc-btn__close {
+        display: none;
+    }
 
-    font-size: rem(12);
-    letter-spacing: 0.2em;
+    &.active {
+        background: #fff;
+
+        span {
+            color: #fff;
+        }
+
+        .toc-btn__open {
+            display: none;
+        }
+
+        .toc-btn__close {
+            display: block;
+            color: $color-main;
+        }
+    }
 }
 
 .toc {
@@ -267,33 +269,36 @@ body.no-scroll {
     justify-content: center;
     align-items: center;
     position: fixed;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100vh;
-    padding: 120px 40px;
+    inset: 0;
     background-color: #fff;
-    transform: translateX(100%);
-    transition: transform 0.5s cubic-bezier(.22, 1, .36, 1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition:
+        opacity 0.4s ease,
+        transform 0.4s cubic-bezier(.22, 1, .36, 1),
+        visibility 0.4s;
     z-index: 999;
-}
 
-.toc.active {
-    transform: translateX(0);
-}
+    &.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
 
-.toc ul {
-    list-style: none;
-    padding: 0;
-}
+    &ul {
+        list-style: none;
+        padding: 0;
+    }
 
-.toc li {
-    margin-bottom: 24px;
-}
+    &li {
+        margin-bottom: 24px;
+    }
 
-.toc a {
-    text-decoration: none;
-    font-size: rem(16);
+    &a {
+        text-decoration: none;
+        font-size: rem(16);
+    }
 }
 
 .toc-overlay {
@@ -308,14 +313,6 @@ body.no-scroll {
 .toc-overlay.active {
     opacity: 1;
     pointer-events: auto;
-}
-
-.toc-btn.active {
-    background: $color-main;
-
-    span {
-        color: #fff;
-    }
 }
 
 
@@ -495,7 +492,7 @@ body.no-scroll {
     padding: 0;
     margin-top: rem(20);
     list-style: none;
-    width: rem(450);
+    width: rem(470);
     aspect-ratio: 450 / 400;
     border-radius: rem(20);
     border: solid 0.5px $color-main;
@@ -617,7 +614,6 @@ body.no-scroll {
         position: relative;
         font-size: rem(20);
         font-weight: bold;
-        margin-top: rem(30);
         margin-bottom: rem(15);
         margin-left: rem(30);
 
@@ -644,7 +640,7 @@ body.no-scroll {
         margin-left: rem(5);
         display: grid;
         grid-template-columns: 1fr 1fr;
-        column-gap: rem(80);
+        column-gap: rem(30);
         row-gap: rem(50);
     }
 }

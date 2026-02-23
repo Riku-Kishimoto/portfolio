@@ -13,41 +13,20 @@ observer.observe(footer);
 const tocBtn = document.querySelector('.toc-btn');
 const toc = document.querySelector('.toc');
 const overlay = document.querySelector('.toc-overlay');
-const closeBtn = document.querySelector('.toc-close');
 
 tocBtn.addEventListener('click', () => {
-    toc.classList.add('active');
-    overlay.classList.add('active');
-});
-
-closeBtn.addEventListener('click', () => {
-    toc.classList.remove('active');
-    overlay.classList.remove('active');
+    toc.classList.toggle('active');
+    overlay.classList.toggle('active');
+    tocBtn.classList.toggle('active');
+    document.body.classList.toggle('no-scroll');
 });
 
 overlay.addEventListener('click', () => {
     toc.classList.remove('active');
     overlay.classList.remove('active');
+    tocBtn.classList.remove('active');
+    document.body.classList.remove('no-scroll');
 });
-
-const tocClose = document.querySelector(".toc-close");
-
-tocBtn.addEventListener("click", () => {
-    toc.classList.add("active");
-    overlay.classList.add("active");
-    tocBtn.classList.add("active");
-    document.body.classList.add("no-scroll");
-});
-
-function closeToc() {
-    toc.classList.remove("active");
-    overlay.classList.remove("active");
-    tocBtn.classList.remove("active");
-    document.body.classList.remove("no-scroll");
-}
-
-tocClose.addEventListener("click", closeToc);
-overlay.addEventListener("click", closeToc);
 //ハンバーガーメニューここまで
 
 //works表示切り替え
