@@ -29,8 +29,28 @@ overlay.addEventListener('click', () => {
     toc.classList.remove('active');
     overlay.classList.remove('active');
 });
+
+const tocClose = document.querySelector(".toc-close");
+
+tocBtn.addEventListener("click", () => {
+    toc.classList.add("active");
+    overlay.classList.add("active");
+    tocBtn.classList.add("active");
+    document.body.classList.add("no-scroll");
+});
+
+function closeToc() {
+    toc.classList.remove("active");
+    overlay.classList.remove("active");
+    tocBtn.classList.remove("active");
+    document.body.classList.remove("no-scroll");
+}
+
+tocClose.addEventListener("click", closeToc);
+overlay.addEventListener("click", closeToc);
 //ハンバーガーメニューここまで
 
+//works表示切り替え
 document.addEventListener("DOMContentLoaded", function () {
     const filters = document.querySelectorAll("[data-filter]");
     const posts = document.querySelectorAll(".post");
@@ -41,7 +61,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const category = this.dataset.filter;
 
-            // 投稿の表示切り替え
             posts.forEach(post => {
                 if (category === "all" || post.dataset.category === category) {
                     post.style.display = "block";
@@ -50,33 +69,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             });
 
-            // active切り替え
             filters.forEach(link => link.classList.remove("is-active"));
             this.classList.add("is-active");
         });
     });
 });
-
-// document.addEventListener("DOMContentLoaded", function () {
-//     const filters = document.querySelectorAll("[data-filter]");
-//     const posts = document.querySelectorAll(".post");
-
-//     filters.forEach(filter => {
-//         filter.addEventListener("click", function (e) {
-//             e.preventDefault();
-
-//             const category = this.dataset.filter;
-
-//             posts.forEach(post => {
-//                 if (category === "all" || post.dataset.category === category) {
-//                     post.style.display = "block";
-//                 } else {
-//                     post.style.display = "none";
-//                 }
-//             });
-//         });
-//     });
-// });
-
-// filters.forEach(link => link.classList.remove("is-active"));
-// this.classList.add("is-active");

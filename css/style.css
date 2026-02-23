@@ -99,6 +99,10 @@ body {
   opacity: 1;
 }
 
+body.no-scroll {
+  overflow: hidden;
+}
+
 .toc-btn {
   position: fixed;
   top: 40px;
@@ -211,7 +215,13 @@ body {
   -moz-column-gap: 40px;
        column-gap: 40px;
 }
-.footer__mail {
+.footer__copy {
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.mail {
   display: inline-block;
   margin-bottom: 7.5rem;
   font-size: 1.125rem;
@@ -221,14 +231,9 @@ body {
   border-radius: 2.5rem;
   border: 1px solid #000041;
 }
-.footer__mail:hover {
+.mail:hover {
   color: #FFFFFF;
   background-color: #000041;
-}
-.footer__copy {
-  text-align: center;
-  font-size: 0.75rem;
-  font-weight: bold;
 }
 
 .nav__navlist {
@@ -252,6 +257,16 @@ body {
   width: 1px;
   height: 20px;
   background-color: #000041;
+}
+
+.nav__navlist a {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.nav__navlist a:hover {
+  transform: translateY(6px);
+  font-weight: bold;
 }
 
 .list__title {
@@ -425,6 +440,9 @@ body {
 .explanation__text {
   margin-top: 0.9375rem;
   margin-bottom: 0.9375rem;
+}
+.explanation__text a span {
+  color: red;
 }
 .explanation__tag {
   font-size: 1.125rem;
