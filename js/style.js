@@ -30,3 +30,53 @@ overlay.addEventListener('click', () => {
     overlay.classList.remove('active');
 });
 //ハンバーガーメニューここまで
+
+document.addEventListener("DOMContentLoaded", function () {
+    const filters = document.querySelectorAll("[data-filter]");
+    const posts = document.querySelectorAll(".post");
+
+    filters.forEach(filter => {
+        filter.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            const category = this.dataset.filter;
+
+            // 投稿の表示切り替え
+            posts.forEach(post => {
+                if (category === "all" || post.dataset.category === category) {
+                    post.style.display = "block";
+                } else {
+                    post.style.display = "none";
+                }
+            });
+
+            // active切り替え
+            filters.forEach(link => link.classList.remove("is-active"));
+            this.classList.add("is-active");
+        });
+    });
+});
+
+// document.addEventListener("DOMContentLoaded", function () {
+//     const filters = document.querySelectorAll("[data-filter]");
+//     const posts = document.querySelectorAll(".post");
+
+//     filters.forEach(filter => {
+//         filter.addEventListener("click", function (e) {
+//             e.preventDefault();
+
+//             const category = this.dataset.filter;
+
+//             posts.forEach(post => {
+//                 if (category === "all" || post.dataset.category === category) {
+//                     post.style.display = "block";
+//                 } else {
+//                     post.style.display = "none";
+//                 }
+//             });
+//         });
+//     });
+// });
+
+// filters.forEach(link => link.classList.remove("is-active"));
+// this.classList.add("is-active");

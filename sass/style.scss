@@ -1,5 +1,13 @@
 @use "sass:math";
 
+@font-face {
+    font-family: "花鳥風月";
+    src: url("../fonts/花鳥風月.ttf") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 // =================================================================
 //  Variables
 // =================================================================
@@ -22,8 +30,9 @@ $color-bg: #000;
 
 // --- Typography ---
 $font-size-base: 16;
-$font-family-gothic: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif;
-$font-family-mincho: "Times New Roman", Times, "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+$font-family-gothic: "Zen Kaku Gothic New", "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif;
+$font-family-mincho: "Noto Serif JP", "Times New Roman", Times, "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+$font-family-kachofugetsu: "花鳥風月", "Hiragino Mincho ProN", "Yu Mincho", serif;
 
 // --- Breakpoints ---
 $breakpoints: (
@@ -112,20 +121,23 @@ $breakpoints: (
         transform: translateX(-50%);
         width: 1px;
         height: 80px;
-        background-color: #000;
+        background-color: $color-main;
     }
 }
 
 // =================================================================
 //  共通部分
 // =================================================================
-
 @view-transition {
     navigation: auto;
 }
 
 html {
     scroll-behavior: smooth;
+}
+
+body {
+    font-family: $font-family-gothic;
 }
 
 .header {
@@ -198,6 +210,10 @@ html {
 .header--hidden {
     opacity: 0;
     visibility: hidden;
+}
+
+.header__nav--list li:has(a.is-active)::before {
+    opacity: 1;
 }
 
 .toc-btn {
@@ -358,6 +374,7 @@ html {
             &::before {
                 content: "";
                 position: absolute;
+                color: $color-main;
                 top: -30px;
                 left: 50%;
                 transform: translateX(-50%);
@@ -521,6 +538,10 @@ html {
     &__tag {
         font-size: rem(14);
     }
+
+    &__img {
+        max-width: rem(550);
+    }
 }
 
 .explanation {
@@ -616,7 +637,7 @@ html {
 
 
 .works {
-    padding-top: rem(350);
+    padding-top: rem(300);
     padding-left: rem(100);
 
     &__inner {
@@ -624,7 +645,7 @@ html {
         display: grid;
         grid-template-columns: 1fr 1fr;
         column-gap: rem(100);
-        row-gap: rem(100);
+        row-gap: rem(80);
         margin: 0 auto;
     }
 }
@@ -643,8 +664,8 @@ html {
 
     &__tag {
         font-size: rem(12);
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        column-gap: rem(20);
+        display: flex;
+        column-gap: rem(5);
+        flex-wrap: wrap;
     }
 }
