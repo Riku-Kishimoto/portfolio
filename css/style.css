@@ -491,6 +491,13 @@ body.no-scroll {
 
 .post__img {
   margin-bottom: 1.5625rem;
+  overflow: hidden;
+  transform: scale(1);
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+.post:hover .post__img img {
+  transform: scale(1.08);
 }
 .post__title {
   font-size: 1rem;
