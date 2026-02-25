@@ -260,6 +260,29 @@ body.no-scroll {
         .toc-btn__close {
             display: block;
             color: $color-main;
+            position: relative;
+            width: 24px;
+            height: 24px;
+            display: inline-block;
+
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 100%;
+                height: 1px;
+                background: currentColor;
+            }
+
+            &::before {
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+
+            &::after {
+                transform: translate(-50%, -50%) rotate(-45deg);
+            }
         }
     }
 }
@@ -344,14 +367,16 @@ body.no-scroll {
 }
 
 .mail {
-    display: inline-block;
+    display: block;
     margin-bottom: rem(120);
     font-size: rem(18);
     text-align: center;
-    max-width: 350px;
-    padding: rem(10) rem(45);
+    max-width: rem(400);
+    padding: rem(10) rem(60);
     border-radius: rem(40);
     border: 1px solid $color-main;
+    margin-right: auto;
+    margin-left: auto;
 
     &:hover {
         color: #FFFFFF;
@@ -480,7 +505,6 @@ body.no-scroll {
 }
 
 .layout {
-    margin-bottom: rem(80);
 
     &__title {
         font-size: rem(20);
@@ -493,7 +517,7 @@ body.no-scroll {
     margin-top: rem(20);
     list-style: none;
     width: rem(470);
-    aspect-ratio: 450 / 400;
+    aspect-ratio: 450 / 300;
     border-radius: rem(20);
     border: solid 0.5px $color-main;
     overflow-y: auto;
@@ -530,6 +554,8 @@ body.no-scroll {
 // =================================================================
 
 .mainvisual {
+    margin-bottom: rem(140);
+
     &__inner {
         @include main-inner();
         display: grid;
@@ -547,6 +573,10 @@ body.no-scroll {
     }
 
     &__tag {
+        margin-top: rem(10);
+        display: flex;
+        column-gap: rem(5);
+        flex-wrap: wrap;
         font-size: rem(14);
     }
 
@@ -562,9 +592,11 @@ body.no-scroll {
 
     &__about {
         display: grid;
-        grid-template-columns: 450fr 490fr;
         column-gap: rem(100);
-        margin-top: rem(100);
+
+        @include mq(desktop) {
+            grid-template-columns: 450fr 490fr;
+        }
     }
 
     &__title {
@@ -578,7 +610,6 @@ body.no-scroll {
 
     &__subtitle {
         margin-top: rem(100);
-        margin-bottom: rem(30);
         padding: rem(5) rem(13) rem(5);
         font-size: rem(20);
         font-weight: bold;
@@ -593,11 +624,17 @@ body.no-scroll {
     }
 
     &__text {
+        font-size: rem(16);
         margin-top: rem(15);
         margin-bottom: rem(15);
 
+        p {
+            line-height: 1.7;
+            letter-spacing: 0.08em;
+        }
+
         a span {
-            color: red;
+            color: $color-main;
         }
     }
 
@@ -607,13 +644,13 @@ body.no-scroll {
 
     &__version {
         display: grid;
-        row-gap: rem(50);
     }
 
     &__heading {
         position: relative;
         font-size: rem(20);
         font-weight: bold;
+        margin-top: rem(40);
         margin-bottom: rem(15);
         margin-left: rem(30);
 
@@ -626,22 +663,39 @@ body.no-scroll {
             height: 2px;
             background-color: $color-main;
         }
+
+        &--top {
+            margin-top: rem(0);
+        }
     }
 
-    &__color {
+    &__color,
+    &__photo {
         display: grid;
-        grid-template-columns: 450fr 490fr;
         column-gap: rem(100);
+        align-items: center;
+
+        @include mq(desktop) {
+            grid-template-columns: 450fr 490fr;
+        }
+    }
+
+    &__scheme {
+        align-items: center;
     }
 
     &__layout {
         margin-top: rem(50);
+        margin-bottom: rem(20);
         margin-right: rem(5);
         margin-left: rem(5);
         display: grid;
-        grid-template-columns: 1fr 1fr;
         column-gap: rem(30);
         row-gap: rem(50);
+
+        @include mq(desktop) {
+            grid-template-columns: 1fr 1fr;
+        }
     }
 }
 
