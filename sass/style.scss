@@ -441,7 +441,8 @@ body.no-scroll {
     &__item {
         display: grid;
         grid-template-columns: 1fr 4fr;
-        column-gap: rem(40);
+        align-items: center;
+        column-gap: rem(20);
         row-gap: rem(40);
         border-bottom: 1px dotted $color-main;
         padding-top: rem(15);
@@ -617,12 +618,9 @@ body.no-scroll {
 // =================================================================
 
 .mainvisual {
-    margin-bottom: rem(140);
 
     &__inner {
         @include main-inner();
-        display: grid;
-        grid-template-columns: 430fr 550fr;
     }
 
     &__titles {
@@ -644,7 +642,17 @@ body.no-scroll {
     }
 
     &__img {
-        max-width: rem(550);
+        max-width: 100%;
+
+        &--ver2 {
+            padding-top: rem(80);
+        }
+    }
+
+    &__pic {
+        margin-bottom: rem(140);
+        display: grid;
+        grid-template-columns: 430fr 550fr;
     }
 }
 
@@ -665,7 +673,7 @@ body.no-scroll {
     &__title {
         font-size: rem(28);
         font-weight: bold;
-        margin-top: rem(140);
+        margin-top: rem(80);
         padding-bottom: rem(10);
         margin-bottom: rem(10);
         border-bottom: 1px solid $color-main;
@@ -703,6 +711,7 @@ body.no-scroll {
 
     &__tag {
         font-size: rem(18);
+        margin-bottom: rem(50);
     }
 
     &__version {
@@ -749,7 +758,7 @@ body.no-scroll {
 
     &__layout {
         margin-top: rem(50);
-        margin-bottom: rem(20);
+        margin-bottom: rem(80);
         margin-right: rem(5);
         margin-left: rem(5);
         display: grid;
@@ -759,6 +768,18 @@ body.no-scroll {
         @include mq(desktop) {
             grid-template-columns: 1fr 1fr;
         }
+    }
+
+    &__works {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: rem(100);
+    }
+
+    &__opus {
+        display: grid;
+        margin-top: rem(50);
+        row-gap: rem(50);
     }
 }
 
