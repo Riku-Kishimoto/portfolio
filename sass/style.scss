@@ -347,6 +347,7 @@ body.no-scroll {
 
 .nav {
     &__navlist {
+        font-size: rem(16);
         writing-mode: vertical-rl;
 
         li {
@@ -467,7 +468,6 @@ body.no-scroll {
 }
 
 .layout {
-
     &__title {
         font-size: rem(20);
         font-weight: bold;
@@ -478,7 +478,7 @@ body.no-scroll {
     padding: 0;
     margin-top: rem(20);
     list-style: none;
-    width: rem(470);
+    max-width: rem(470);
     aspect-ratio: 450 / 300;
     border-radius: rem(20);
     border: solid 0.5px $color-main;
@@ -509,8 +509,8 @@ body.no-scroll {
 
         margin-right: auto;
         margin-left: auto;
-        width: rem(450);
-        height: rem(300);
+        max-width: rem(450);
+        max-height: rem(300);
     }
 
     &__all {
@@ -642,7 +642,11 @@ body.no-scroll {
 
 .explanation {
     &__inner {
-        @include main-inner();
+        @include inner();
+
+        @include mq(desktop) {
+            @include main-inner();
+        }
     }
 
     &__about {
@@ -679,9 +683,13 @@ body.no-scroll {
     &__subtitle {
         margin-top: rem(100);
         padding: rem(5) rem(13) rem(5);
-        font-size: rem(20);
+        font-size: rem(16);
         font-weight: bold;
         border: 1px solid $color-main;
+
+        @include mq(desktop) {
+            font-size: rem(20);
+        }
     }
 
     &__h5 {
@@ -722,20 +730,34 @@ body.no-scroll {
 
     &__heading {
         position: relative;
-        font-size: rem(20);
+        font-size: rem(16);
         font-weight: bold;
         margin-top: rem(40);
         margin-bottom: rem(15);
-        margin-left: rem(30);
+        margin-left: rem(25);
+
+        @include mq(desktop) {
+            font-size: rem(20);
+            margin-left: rem(30);
+        }
 
         &::before {
             content: "";
             position: absolute;
-            top: 15px;
-            left: -30px;
-            width: 25px;
-            height: 2px;
+            top: 12px;
+            left: -22px;
+            width: 15px;
+            height: 1.5px;
             background-color: $color-main;
+
+            @include mq(desktop) {
+                top: 15px;
+                left: -30px;
+                width: 25px;
+                height: 2px;
+                background-color: $color-main;
+
+            }
         }
 
         &--top {
@@ -840,7 +862,7 @@ body.no-scroll {
             margin-bottom: rem(16);
             font-size: rem(16);
 
-            a {
+            button {
                 color: $color-main;
                 text-decoration: none;
                 display: inline-block;
@@ -878,7 +900,7 @@ body.no-scroll {
         }
     }
 
-    &__nav--list li:has(a.is-active)::before {
+    &__nav--list li:has(button.is-active)::before {
         opacity: 1;
     }
 

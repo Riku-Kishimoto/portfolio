@@ -53,3 +53,28 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+// URLの?filter=
+const params = new URLSearchParams(window.location.search);
+const filter = params.get("filter");
+
+if (filter) {
+    document.querySelectorAll('[data-filter]').forEach(btn => {
+        btn.classList.remove("is-active");
+
+        if (btn.dataset.filter === filter) {
+            btn.classList.add("is-active");
+        }
+    });
+
+    document.querySelectorAll(".post").forEach(post => {
+        if (filter === "all" || post.dataset.category === filter) {
+            post.style.display = "block";
+        } else {
+            post.style.display = "none";
+        }
+    });
+
+    history.pushState(null, "", `?filter=${filter}`);
+
+}
