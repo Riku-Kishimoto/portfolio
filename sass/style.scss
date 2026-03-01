@@ -90,7 +90,7 @@ $breakpoints: (
     margin-right: auto;
 }
 
-@mixin inner($mw: 900px, $w: 95%) {
+@mixin inner($mw: 900px, $w: 90%) {
     max-width: $mw;
     width: $w;
     margin-left: auto;
@@ -112,6 +112,7 @@ $breakpoints: (
     font-weight: bold;
     letter-spacing: 0.4em;
     position: fixed;
+    z-index: 999;
 
     &::before {
         content: "";
@@ -144,64 +145,14 @@ body {
     transition: opacity 0.3s ease, visibility 0.3s ease;
 
     &__inner {
-        @include side-inner();
+        width: 90%;
+        max-width: 1200px;
+        margin-right: auto;
+        margin-left: auto;
     }
 
     &__title {
         @include title();
-    }
-
-    &__nav {
-        position: fixed;
-
-        &--list {
-            margin-top: rem(430);
-            list-style: none;
-            padding: 0;
-        }
-
-        li {
-            position: relative;
-            padding-left: rem(40);
-            margin-bottom: rem(16);
-            font-size: rem(16);
-
-            a {
-                color: $color-main;
-                text-decoration: none;
-                display: inline-block;
-
-
-                &:hover {
-                    font-weight: bold;
-                }
-
-                &.is-active {
-                    font-weight: bold;
-                }
-            }
-
-            &::before {
-                content: "";
-                position: absolute;
-                left: 1%;
-                top: 50%;
-                transform: translateY(-50%);
-                width: 20px;
-                height: 1px;
-                background-color: $color-main;
-                opacity: 0;
-                transition: opacity 0.3s;
-            }
-
-            &:hover::before {
-                opacity: 1;
-            }
-
-            &.is-active::before {
-                opacity: 1;
-            }
-        }
     }
 }
 
@@ -209,10 +160,6 @@ body {
 .header--hidden {
     opacity: 0;
     visibility: hidden;
-}
-
-.header__nav--list li:has(a.is-active)::before {
-    opacity: 1;
 }
 
 .main {
@@ -231,8 +178,8 @@ body.no-scroll {
 
 .toc-btn {
     position: fixed;
-    top: 40px;
-    right: 40px;
+    top: 20px;
+    right: 20px;
     width: 70px;
     height: 70px;
     border: 1px solid $color-main;
@@ -243,6 +190,11 @@ body.no-scroll {
     align-items: center;
     justify-content: center;
     z-index: 1000;
+
+    @include mq(desktop) {
+        top: 40px;
+        right: 40px;
+    }
 
     span {
         writing-mode: vertical-rl;
@@ -583,6 +535,18 @@ body.no-scroll {
     &__title {
         font-size: rem(60);
     }
+
+    &__pic {
+        aspect-ratio: 700 / 1000;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+    }
 }
 
 .side-nav {
@@ -683,10 +647,23 @@ body.no-scroll {
 
     &__about {
         display: grid;
-        column-gap: rem(100);
+        column-gap: rem(60);
 
         @include mq(desktop) {
             grid-template-columns: 450fr 490fr;
+        }
+
+        &--top {
+            margin-top: rem(50);
+        }
+    }
+
+    &__whoami {
+        display: grid;
+        column-gap: rem(60);
+
+        @include mq(desktop) {
+            grid-template-columns: 1fr 1fr;
         }
     }
 
@@ -727,6 +704,11 @@ body.no-scroll {
         a span {
             color: $color-main;
         }
+    }
+
+    &__list {
+        display: grid;
+        row-gap: rem(10);
     }
 
     &__tag {
@@ -792,14 +774,19 @@ body.no-scroll {
 
     &__works {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        column-gap: rem(100);
+        grid-template-columns: 450fr 490fr;
+        column-gap: rem(60);
     }
 
     &__opus {
         display: grid;
-        margin-top: rem(50);
-        row-gap: rem(50);
+        row-gap: rem(10);
+
+        &--web {
+            img {
+                border: $color-main 1px solid;
+            }
+        }
     }
 }
 
@@ -809,16 +796,90 @@ body.no-scroll {
 
 
 .works {
-    padding-top: rem(300);
-    padding-left: rem(100);
+    padding-top: rem(150);
+
+    @include mq(desktop) {
+        padding-top: rem(300);
+        padding-left: rem(100);
+    }
 
     &__inner {
         @include inner();
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        column-gap: rem(100);
-        row-gap: rem(80);
+        row-gap: rem(50);
         margin: 0 auto;
+
+        @include mq(desktop) {
+            grid-template-columns: 1fr 1fr;
+            column-gap: rem(100);
+            row-gap: rem(80);
+        }
+    }
+
+    &__nav {
+        display: none;
+        position: relative;
+
+        @include mq(desktop) {
+            display: block;
+            position: fixed;
+        }
+
+        &--list {
+            list-style: none;
+            padding: 0;
+
+            @include mq(desktop) {
+                margin-top: rem(430);
+            }
+        }
+
+        li {
+            position: relative;
+            padding-left: rem(40);
+            margin-bottom: rem(16);
+            font-size: rem(16);
+
+            a {
+                color: $color-main;
+                text-decoration: none;
+                display: inline-block;
+
+
+                &:hover {
+                    font-weight: bold;
+                }
+
+                &.is-active {
+                    font-weight: bold;
+                }
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: 1%;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 20px;
+                height: 1px;
+                background-color: $color-main;
+                opacity: 0;
+                transition: opacity 0.3s;
+            }
+
+            &:hover::before {
+                opacity: 1;
+            }
+
+            &.is-active::before {
+                opacity: 1;
+            }
+        }
+    }
+
+    &__nav--list li:has(a.is-active)::before {
+        opacity: 1;
     }
 
 }
