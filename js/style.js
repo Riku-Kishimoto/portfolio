@@ -8,6 +8,34 @@ const observer = new IntersectionObserver(([entry]) => {
 
 observer.observe(footer);
 
+document.addEventListener("DOMContentLoaded", function () {
+
+    const sections = document.querySelectorAll("[data-title]");
+    const headerTitle = document.querySelector(".header__title");
+
+    headerTitle.classList.remove("is-visible");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+                headerTitle.textContent = entry.target.dataset.title;
+                headerTitle.classList.add("is-visible");
+            } else {
+                headerTitle.classList.remove("is-visible");
+            }
+
+        });
+    }, {
+        threshold: 0.4
+    });
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+
+});
+
 
 //ハンバーガーメニュー
 const tocBtn = document.querySelector('.toc-btn');
