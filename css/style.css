@@ -122,9 +122,6 @@ body.no-scroll {
 .toc-btn .toc-btn__close {
   display: none;
 }
-.toc-btn.active {
-  background: #fff;
-}
 .toc-btn.active span {
   color: #fff;
 }
@@ -394,10 +391,14 @@ body.no-scroll {
 
 .top {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  -moz-column-gap: 1.25rem;
-       column-gap: 1.25rem;
-  align-items: center;
+}
+@media (width >= 1024px) {
+  .top {
+    grid-template-columns: 1fr 1fr;
+    -moz-column-gap: 1.25rem;
+         column-gap: 1.25rem;
+    align-items: center;
+  }
 }
 .top__main {
   margin-top: 12.5rem;
@@ -431,6 +432,7 @@ body.no-scroll {
 }
 
 .btn-circle-arrow {
+  margin-top: 1.875rem;
   display: inline-flex;
   align-items: center;
   gap: 1rem;
@@ -475,39 +477,6 @@ body.no-scroll {
 }
 .btn-circle-arrow:hover .btn-circle-arrow__icon path {
   transform: translateX(-1px);
-}
-
-.side-nav {
-  display: inline-block;
-  top: 50%;
-  right: 40px;
-  transform: translateY(-50%);
-  z-index: 100;
-}
-.side-nav__list {
-  display: flex;
-  flex-direction: column;
-}
-.side-nav__item {
-  border: 1px solid #000;
-  border-radius: 0 15px 15px 0;
-  padding: 15px 10px;
-  background: #fff;
-  transition: 0.3s;
-}
-.side-nav__item a {
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-  font-size: 12px;
-  letter-spacing: 0.2em;
-  text-decoration: none;
-  color: #000;
-}
-.side-nav__item:hover {
-  background: #000;
-}
-.side-nav__item:hover a {
-  color: #fff;
 }
 
 .mainvisual__inner {
@@ -850,18 +819,42 @@ body.no-scroll {
        column-gap: 0.3125rem;
   flex-wrap: wrap;
 }
+.post__text {
+  margin-top: 1.25rem;
+  font-size: 1rem;
+}
+.post__text p {
+  line-height: 1.7;
+  letter-spacing: 0.08em;
+}
 
 .about__inner {
   max-width: 980px;
   width: 95%;
   margin-left: auto;
   margin-right: auto;
+}
+.about__res {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
+}
+@media (width >= 1024px) {
+  .about__res {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+}
+.about__res:nth-child(even) .about__text:first-child {
+  order: 2;
+}
+.about__res:nth-child(even) .about__img--top:last-child {
+  order: 1;
+}
+.about__text {
+  display: grid;
+  row-gap: 0.3125rem;
 }
 .about__text h2 {
-  font-size: 2.5rem;
+  font-size: 1.875rem;
 }
 .about__img {
   max-width: 100%;
@@ -872,6 +865,10 @@ body.no-scroll {
   .about__img {
     width: 25rem;
     height: 43.75rem;
+  }
+  .about__img--top {
+    width: 18.75rem;
+    height: 25rem;
   }
 }
 .about__img img {

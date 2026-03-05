@@ -219,7 +219,6 @@ body.no-scroll {
     }
 
     &.active {
-        background: #fff;
 
         span {
             color: #fff;
@@ -539,9 +538,22 @@ body.no-scroll {
 
 .top {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: rem(20);
-    align-items: center;
+
+    @include mq(desktop) {
+        grid-template-columns: 1fr 1fr;
+        column-gap: rem(20);
+        align-items: center;
+    }
+
+    // &:nth-child(even) {
+    //     .top__title:first-child {
+    //         order: 2;
+    //     }
+
+    //     .top__pic:last-child {
+    //         order: 1;
+    //     }
+    // }
 
     &__main {
         margin-top: rem(200);
@@ -576,6 +588,7 @@ body.no-scroll {
 }
 
 .btn-circle-arrow {
+    margin-top: rem(30);
     display: inline-flex;
     align-items: center;
     gap: rem(16);
@@ -628,45 +641,6 @@ body.no-scroll {
 
         .btn-circle-arrow__icon path {
             transform: translateX(-1px);
-        }
-    }
-}
-
-.side-nav {
-    // position: fixed;
-    display: inline-block;
-    top: 50%;
-    right: 40px;
-    transform: translateY(-50%);
-    z-index: 100;
-
-    &__list {
-        display: flex;
-        flex-direction: column;
-    }
-
-    &__item {
-        border: 1px solid #000;
-        border-radius: 0 15px 15px 0;
-        padding: 15px 10px;
-        background: #fff;
-        transition: 0.3s;
-
-        a {
-            writing-mode: vertical-rl;
-            text-orientation: mixed;
-            font-size: 12px;
-            letter-spacing: 0.2em;
-            text-decoration: none;
-            color: #000;
-        }
-
-        &:hover {
-            background: #000;
-
-            a {
-                color: #fff;
-            }
         }
     }
 }
@@ -1046,6 +1020,16 @@ body.no-scroll {
         column-gap: rem(5);
         flex-wrap: wrap;
     }
+
+    &__text {
+        margin-top: rem(20);
+        font-size: rem(16);
+
+        p {
+            line-height: 1.7;
+            letter-spacing: 0.08em;
+        }
+    }
 }
 
 // =================================================================
@@ -1056,14 +1040,33 @@ body.no-scroll {
 
     &__inner {
         @include main-inner();
+    }
+
+    &__res {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        align-items: center;
+
+        @include mq(desktop) {
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+        }
+
+        &:nth-child(even) {
+            .about__text:first-child {
+                order: 2;
+            }
+
+            .about__img--top:last-child {
+                order: 1;
+            }
+        }
     }
 
     &__text {
+        display: grid;
+        row-gap: rem(5);
+
         h2 {
-            font-size: rem(40);
+            font-size: rem(30);
         }
     }
 
@@ -1075,6 +1078,11 @@ body.no-scroll {
         @include mq(desktop) {
             width: rem(400);
             height: rem(700);
+
+            &--top {
+                width: rem(300);
+                height: rem(400);
+            }
         }
 
         img {
