@@ -139,6 +139,8 @@ html {
 
 body {
     font-family: $font-family-gothic;
+    color: $color-main;
+    background-color: #FCFCFC;
 }
 
 .header {
@@ -152,16 +154,21 @@ body {
     }
 
     &__title {
-        @include title();
+        display: none;
 
-        &--top {
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.4s ease;
+        @include mq(desktop) {
+            display: block;
+            @include title();
 
-            &.is-visible {
-                opacity: 1;
-                visibility: visible;
+            &--top {
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity 0.4s ease;
+
+                &.is-visible {
+                    opacity: 1;
+                    visibility: visible;
+                }
             }
         }
     }
@@ -395,6 +402,7 @@ body.no-scroll {
 }
 
 .list {
+    max-height: rem(350);
 
     &__title {
         font-size: rem(16);
@@ -408,8 +416,8 @@ body.no-scroll {
         column-gap: rem(20);
         row-gap: rem(40);
         border-bottom: 1px dotted $color-main;
-        padding-top: rem(15);
-        padding-bottom: rem(15);
+        padding-top: rem(20);
+        padding-bottom: rem(20);
 
         &:last-child {
             border-bottom: none;
@@ -506,10 +514,11 @@ body.no-scroll {
     margin-bottom: rem(300);
 
     &__img {
-
+        margin-bottom: rem(70);
         aspect-ratio: 450 / 300;
 
         img {
+            margin-bottom: rem(20);
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -535,6 +544,7 @@ body.no-scroll {
 // =================================================================
 //  top
 // =================================================================
+
 
 .top {
     display: grid;
@@ -587,25 +597,85 @@ body.no-scroll {
     }
 }
 
+.fv {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+
+    &__slide {
+        position: absolute;
+        inset: 0;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+
+        opacity: 0;
+        transition: opacity 1s ease;
+
+        &.is-active {
+            opacity: 1;
+            z-index: 1;
+        }
+    }
+
+    &__image {
+        height: 100%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__content {
+        padding: 80px;
+    }
+
+    &__title {
+        font-size: rem(28);
+        margin-bottom: 24px;
+    }
+
+    &__text {
+        line-height: 1.8;
+        color: #555;
+    }
+}
+
 .btn-circle-arrow {
     margin-top: rem(30);
     display: inline-flex;
     align-items: center;
-    gap: rem(16);
-    font-size: rem(18);
+    gap: rem(5);
+    font-size: rem(14);
     letter-spacing: 0.2em;
     text-decoration: none;
     color: $color-main;
     margin-right: auto;
     margin-left: auto;
 
+    @include mq(desktop) {
+        font-size: rem(18);
+        gap: rem(16);
+    }
+
     &__icon {
         width: 100px;
         height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         svg {
-            width: 100%;
-            height: 100%;
+            width: 70%;
+            height: 70%;
+
+            @include mq(desktop) {
+                width: 100%;
+                height: 100%;
+            }
         }
 
         circle.base {
@@ -675,7 +745,11 @@ body.no-scroll {
 
     &__img {
         max-width: 100%;
-        aspect-ratio: 2816 / 1700;
+        aspect-ratio: 4 / 3;
+
+        @include mq(desktop) {
+            aspect-ratio: 2816 / 1700;
+        }
 
         img {
             width: 100%;
@@ -686,7 +760,11 @@ body.no-scroll {
         }
 
         &--ver2 {
-            padding-top: rem(80);
+            padding-top: rem(30);
+
+            @include mq(desktop) {
+                padding-top: rem(80);
+            }
         }
     }
 
@@ -729,12 +807,16 @@ body.no-scroll {
     }
 
     &__title {
-        font-size: rem(28);
+        font-size: rem(22);
         font-weight: bold;
         margin-top: rem(80);
         padding-bottom: rem(10);
         margin-bottom: rem(10);
         border-bottom: 1px solid $color-main;
+
+        @include mq(desktop) {
+            font-size: rem(28);
+        }
     }
 
     &__subtitle {
@@ -773,12 +855,15 @@ body.no-scroll {
 
     &__list {
         display: grid;
-        row-gap: rem(10);
     }
 
     &__tag {
-        font-size: rem(18);
+        font-size: rem(16);
         margin-bottom: rem(50);
+
+        @include mq(desktop) {
+            font-size: rem(18);
+        }
     }
 
     &__version {
@@ -787,7 +872,7 @@ body.no-scroll {
 
     &__heading {
         position: relative;
-        font-size: rem(16);
+        font-size: rem(18);
         font-weight: bold;
         margin-top: rem(40);
         margin-bottom: rem(15);
@@ -833,6 +918,10 @@ body.no-scroll {
         }
     }
 
+    &__photo {
+        align-items: start;
+    }
+
     &__scheme {
         align-items: center;
     }
@@ -875,7 +964,6 @@ body.no-scroll {
 
 
 .works {
-    padding-top: rem(150);
 
     @include mq(desktop) {
         padding-top: rem(300);
@@ -896,34 +984,51 @@ body.no-scroll {
     }
 
     &__nav {
-        display: none;
         position: relative;
+        display: block;
+        overflow-x: auto;
+        margin-top: rem(150);
 
         @include mq(desktop) {
-            display: block;
             position: fixed;
+            display: block;
         }
 
         &--list {
             list-style: none;
             padding: 0;
+            display: flex;
+            gap: rem(16);
+            margin-bottom: rem(20);
 
             @include mq(desktop) {
-                margin-top: rem(430);
+                display: block;
+                margin-top: rem(280);
             }
         }
 
         li {
             position: relative;
-            padding-left: rem(40);
-            margin-bottom: rem(16);
-            font-size: rem(16);
+            font-size: rem(14);
+            padding-left: 0;
+            margin-bottom: 0;
+            flex-shrink: 0;
+
+            @include mq(desktop) {
+                font-size: rem(16);
+                padding-left: rem(40);
+                margin-bottom: rem(16);
+            }
 
             button {
                 color: $color-main;
                 text-decoration: none;
                 display: inline-block;
-
+                padding: rem(5) rem(10);
+                border: 1px solid $color-main;
+                border-radius: 999px;
+                background: transparent;
+                transition: all .3s;
 
                 &:hover {
                     font-weight: bold;
@@ -932,19 +1037,32 @@ body.no-scroll {
                 &.is-active {
                     font-weight: bold;
                 }
+
+                @include mq(desktop) {
+                    padding: 0;
+                    border: none;
+                    border-radius: 0;
+                    background: transparent;
+                    color: $color-main;
+                }
             }
 
             &::before {
-                content: "";
-                position: absolute;
-                left: 1%;
-                top: 50%;
-                transform: translateY(-50%);
-                width: 20px;
-                height: 1px;
-                background-color: $color-main;
-                opacity: 0;
-                transition: opacity 0.3s;
+                display: none;
+
+                @include mq(desktop) {
+                    display: block;
+                    content: "";
+                    position: absolute;
+                    left: 1%;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 20px;
+                    height: 1px;
+                    background-color: $color-main;
+                    opacity: 0;
+                    transition: opacity 0.3s;
+                }
             }
 
             &:hover::before {
@@ -1033,51 +1151,63 @@ body.no-scroll {
 }
 
 // =================================================================
-//  works
+//  about
 // =================================================================
 
 .about {
 
     &__inner {
-        @include main-inner();
+        @include inner();
+
+        @include mq(desktop) {
+            @include main-inner();
+        }
     }
 
     &__res {
         display: grid;
+        gap: rem(24);
+        margin-top: rem(50);
 
         @include mq(desktop) {
             grid-template-columns: 1fr 1fr;
             align-items: center;
+            margin-top: rem(0);
         }
 
-        &:nth-child(even) {
-            .about__text:first-child {
-                order: 2;
-            }
-
-            .about__img--top:last-child {
-                order: 1;
-            }
-        }
     }
 
     &__text {
         display: grid;
         row-gap: rem(5);
+        order: 2;
 
         h2 {
-            font-size: rem(30);
+            font-size: rem(25);
+
+            @include mq(desktop) {
+                font-size: rem(30);
+            }
+        }
+
+        @include mq(desktop) {
+            order: 1;
         }
     }
 
     &__img {
-        max-width: 100%;
-        aspect-ratio: 1 / 2;
-        margin-left: auto;
+        width: 60%;
+        margin: 0 auto;
+        aspect-ratio: 4 / 5;
+        order: 1;
 
         @include mq(desktop) {
+            order: 2;
             width: rem(400);
             height: rem(700);
+            margin-left: auto;
+            border-radius: 0;
+            aspect-ratio: auto;
 
             &--top {
                 width: rem(300);

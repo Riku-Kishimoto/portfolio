@@ -106,3 +106,19 @@ if (filter) {
     history.pushState(null, "", `?filter=${filter}`);
 
 }
+
+const slides = document.querySelectorAll(".fv__slide");
+let current = 0;
+
+setInterval(() => {
+
+    slides[current].classList.remove("is-active");
+
+    current++;
+    if (current >= slides.length) {
+        current = 0;
+    }
+
+    slides[current].classList.add("is-active");
+
+}, 5000);
