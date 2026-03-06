@@ -329,14 +329,26 @@ body.no-scroll {
 .color__swatch--main {
   background-color: #FFD75F;
 }
+.color__swatch--main--wafu {
+  background-color: #1c1c1c;
+}
 .color__swatch--accent {
   background-color: #FEF6D7;
+}
+.color__swatch--accent--wafu {
+  background-color: #b42141;
 }
 .color__swatch--text {
   background-color: #001F3F;
 }
+.color__swatch--text--wafu {
+  background-color: #1c1c1c;
+}
 .color__swatch--base {
   background-color: #FFFFFF;
+}
+.color__swatch--base--wafu {
+  background-color: #FFFFFB;
 }
 .color__name {
   color: #C2C2C2;
@@ -414,7 +426,8 @@ body.no-scroll {
   }
 }
 .top__main {
-  margin-top: 12.5rem;
+  position: relative;
+  margin-top: 18.75rem;
 }
 .top__inner {
   max-width: 900px;
@@ -446,41 +459,67 @@ body.no-scroll {
 
 .fv {
   height: 100vh;
-  position: relative;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   overflow: hidden;
+  z-index: 0;
 }
 .fv__slide {
   position: absolute;
   inset: 0;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
   opacity: 0;
   transition: opacity 1s ease;
+}
+@media (width >= 1024px) {
+  .fv__slide {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
 }
 .fv__slide.is-active {
   opacity: 1;
   z-index: 1;
 }
-.fv__image {
+.fv__img {
   height: 100%;
 }
-.fv__image img {
+.fv__img img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
 .fv__content {
-  padding: 80px;
+  padding: 5rem 2.5rem 5rem 5rem;
 }
 .fv__title {
   font-size: 1.75rem;
-  margin-bottom: 24px;
+  margin-bottom: 0.625rem;
+}
+.fv__title--main {
+  margin-bottom: 0.625rem;
+  font-size: 5rem;
+  font-family: Inter;
+  font-weight: 800;
+}
+.fv__sub {
+  font-size: 1.875rem;
+  font-family: Inter;
+  font-weight: 800;
 }
 .fv__text {
   line-height: 1.8;
   color: #555;
+}
+.fv__tag {
+  margin-bottom: 0.625rem;
+  font-size: 0.875rem;
+  display: flex;
+  -moz-column-gap: 0.3125rem;
+       column-gap: 0.3125rem;
+  flex-wrap: wrap;
 }
 
 .btn-circle-arrow {
@@ -774,6 +813,10 @@ body.no-scroll {
 }
 .explanation__opus--web img {
   border: #000041 1px solid;
+}
+.explanation__img {
+  margin-top: 1.875rem;
+  margin-bottom: 3.125rem;
 }
 
 @media (width >= 1024px) {

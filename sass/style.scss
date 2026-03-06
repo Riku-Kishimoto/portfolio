@@ -26,7 +26,7 @@ $color-main: #000041;
 $color-text: #000041;
 $color-base: #000;
 $color-accent: #C2C2C2;
-$color-bg: #000;
+$color-bg: #FCFCFC;
 
 // --- Typography ---
 $font-size-base: 16;
@@ -140,7 +140,7 @@ html {
 body {
     font-family: $font-family-gothic;
     color: $color-main;
-    background-color: #FCFCFC;
+    background-color: $color-bg;
 }
 
 .header {
@@ -456,18 +456,35 @@ body.no-scroll {
 
         &--main {
             background-color: #FFD75F;
+
+            &--wafu {
+                background-color: #1c1c1c;
+            }
         }
 
         &--accent {
             background-color: #FEF6D7;
+
+            &--wafu {
+                background-color: #b42141;
+            }
+
         }
 
         &--text {
             background-color: #001F3F;
+
+            &--wafu {
+                background-color: #1c1c1c;
+            }
         }
 
         &--base {
             background-color: #FFFFFF;
+
+            &--wafu {
+                background-color: #FFFFFB;
+            }
         }
     }
 
@@ -555,18 +572,10 @@ body.no-scroll {
         align-items: center;
     }
 
-    // &:nth-child(even) {
-    //     .top__title:first-child {
-    //         order: 2;
-    //     }
-
-    //     .top__pic:last-child {
-    //         order: 1;
-    //     }
-    // }
 
     &__main {
-        margin-top: rem(200);
+        position: relative;
+        margin-top: rem(300);
     }
 
     &__inner {
@@ -599,19 +608,22 @@ body.no-scroll {
 
 .fv {
     height: 100vh;
-    position: relative;
+    position: sticky;
+    top: 0;
     overflow: hidden;
+    z-index: 0;
 
     &__slide {
         position: absolute;
         inset: 0;
-
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        align-items: center;
-
         opacity: 0;
         transition: opacity 1s ease;
+
+        @include mq(desktop) {
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+        }
 
         &.is-active {
             opacity: 1;
@@ -619,7 +631,7 @@ body.no-scroll {
         }
     }
 
-    &__image {
+    &__img {
         height: 100%;
 
         img {
@@ -630,17 +642,38 @@ body.no-scroll {
     }
 
     &__content {
-        padding: 80px;
+        padding: rem(80) rem(40) rem(80) rem(80);
     }
 
     &__title {
         font-size: rem(28);
-        margin-bottom: 24px;
+        margin-bottom: rem(10);
+
+        &--main {
+            margin-bottom: rem(10);
+            font-size: rem(80);
+            font-family: Inter;
+            font-weight: 800;
+        }
+    }
+
+    &__sub {
+        font-size: rem(30);
+        font-family: Inter;
+        font-weight: 800;
     }
 
     &__text {
         line-height: 1.8;
         color: #555;
+    }
+
+    &__tag {
+        margin-bottom: rem(10);
+        font-size: rem(14);
+        display: flex;
+        column-gap: rem(5);
+        flex-wrap: wrap;
     }
 }
 
@@ -955,6 +988,11 @@ body.no-scroll {
                 border: $color-main 1px solid;
             }
         }
+    }
+
+    &__img {
+        margin-top: rem(30);
+        margin-bottom: rem(50);
     }
 }
 
