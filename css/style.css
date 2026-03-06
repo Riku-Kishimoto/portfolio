@@ -427,7 +427,12 @@ body.no-scroll {
 }
 .top__main {
   position: relative;
-  margin-top: 18.75rem;
+  margin-top: 6.25rem;
+}
+@media (width >= 1024px) {
+  .top__main {
+    margin-top: 18.75rem;
+  }
 }
 .top__inner {
   max-width: 900px;
@@ -492,7 +497,12 @@ body.no-scroll {
      object-fit: cover;
 }
 .fv__content {
-  padding: 5rem 2.5rem 5rem 5rem;
+  padding: 1.25rem 1.25rem 0rem 1.25rem;
+}
+@media (width >= 1024px) {
+  .fv__content {
+    padding: 0rem 2.5rem 0rem 5rem;
+  }
 }
 .fv__title {
   font-size: 1.75rem;
@@ -500,14 +510,24 @@ body.no-scroll {
 }
 .fv__title--main {
   margin-bottom: 0.625rem;
-  font-size: 5rem;
+  font-size: 2.5rem;
   font-family: Inter;
   font-weight: 800;
 }
+@media (width >= 1024px) {
+  .fv__title--main {
+    font-size: 5rem;
+  }
+}
 .fv__sub {
-  font-size: 1.875rem;
+  font-size: 1rem;
   font-family: Inter;
   font-weight: 800;
+}
+@media (width >= 1024px) {
+  .fv__sub {
+    font-size: 1.875rem;
+  }
 }
 .fv__text {
   line-height: 1.8;
@@ -522,6 +542,53 @@ body.no-scroll {
   flex-wrap: wrap;
 }
 
+.scrollbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.625rem;
+}
+.scrollbar__text {
+  writing-mode: vertical-rl;
+  transform: rotate(360deg);
+  font-size: 0.8125rem;
+  font-weight: bold;
+  color: #C2C2C2;
+  letter-spacing: 0.1875rem;
+}
+.scrollbar__line {
+  position: relative;
+  width: 0.0625rem;
+  height: 7.5rem;
+  background: #C2C2C2;
+}
+.scrollbar__line--yellow {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 0%;
+  background: #000041;
+  -webkit-animation: scrollLine 5s linear forwards;
+          animation: scrollLine 5s linear forwards;
+}
+
+@-webkit-keyframes scrollLine {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 100%;
+  }
+}
+
+@keyframes scrollLine {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 100%;
+  }
+}
 .btn-circle-arrow {
   margin-top: 1.875rem;
   display: inline-flex;
