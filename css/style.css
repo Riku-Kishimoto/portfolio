@@ -205,6 +205,7 @@ body.no-scroll {
 }
 
 .footer {
+  margin-top: 25rem;
   color: #000041;
   padding-bottom: 3.125rem;
 }
@@ -214,14 +215,6 @@ body.no-scroll {
   margin-right: auto;
   margin-left: auto;
 }
-.footer__nav {
-  margin-top: 25rem;
-  margin-bottom: 9.375rem;
-  display: flex;
-  justify-content: center;
-  -moz-column-gap: 40px;
-       column-gap: 40px;
-}
 .footer__copy {
   text-align: center;
   font-size: 0.75rem;
@@ -229,6 +222,7 @@ body.no-scroll {
 }
 
 .mail {
+  margin-top: 9.375rem;
   display: block;
   margin-bottom: 7.5rem;
   font-size: 1.125rem;
@@ -505,7 +499,7 @@ body.no-scroll {
   }
 }
 .fv__title {
-  font-size: 1.75rem;
+  font-size: 1.25rem;
   margin-bottom: 0.625rem;
 }
 .fv__title--main {
@@ -515,6 +509,9 @@ body.no-scroll {
   font-weight: 800;
 }
 @media (width >= 1024px) {
+  .fv__title {
+    font-size: 1.75rem;
+  }
   .fv__title--main {
     font-size: 5rem;
   }
@@ -540,6 +537,30 @@ body.no-scroll {
   -moz-column-gap: 0.3125rem;
        column-gap: 0.3125rem;
   flex-wrap: wrap;
+}
+.fv__progress {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  z-index: 3;
+}
+.fv__bar {
+  width: 100%;
+  height: 2px;
+  background: #ddd;
+  margin-bottom: 12px;
+  position: relative;
+}
+.fv__bar-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background: #000;
+  transition: width 0.6s ease;
 }
 
 .scrollbar {
@@ -727,7 +748,7 @@ body.no-scroll {
 }
 @media (width >= 1024px) {
   .explanation__about {
-    grid-template-columns: 450fr 490fr;
+    grid-template-columns: 450px 490px;
   }
 }
 .explanation__about--top {
@@ -844,7 +865,7 @@ body.no-scroll {
 }
 @media (width >= 1024px) {
   .explanation__color, .explanation__photo {
-    grid-template-columns: 450fr 490fr;
+    grid-template-columns: 450px 490px;
   }
 }
 .explanation__photo {
@@ -870,9 +891,13 @@ body.no-scroll {
 }
 .explanation__works {
   display: grid;
-  grid-template-columns: 450fr 490fr;
-  -moz-column-gap: 3.75rem;
-       column-gap: 3.75rem;
+}
+@media (width >= 1024px) {
+  .explanation__works {
+    grid-template-columns: 450px 490px;
+    -moz-column-gap: 3.75rem;
+         column-gap: 3.75rem;
+  }
 }
 .explanation__opus {
   display: grid;

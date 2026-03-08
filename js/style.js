@@ -107,6 +107,8 @@ if (filter) {
 
 }
 
+//ファーストビュー
+
 const slides = document.querySelectorAll(".fv__slide");
 let current = 0;
 
@@ -122,3 +124,38 @@ setInterval(() => {
     slides[current].classList.add("is-active");
 
 }, 5000);
+
+// const dots = document.querySelectorAll(".fv__dot");
+// const bar = document.querySelector(".fv__bar-inner");
+
+
+// function showSlide(index) {
+
+//     slides.forEach(slide => {
+//         slide.classList.remove("is-active");
+//     });
+
+//     dots.forEach(dot => {
+//         dot.classList.remove("is-active");
+//     });
+
+//     slides[index].classList.add("is-active");
+//     dots[index].classList.add("is-active");
+
+//     bar.style.width = ((index + 1) / slides.length) * 100 + "%";
+
+//     current = index;
+// }
+
+
+// dots.forEach((dot, index) => {
+//     dot.addEventListener("click", () => {
+//         showSlide(index);
+//     });
+// });
+
+
+// setInterval(() => {
+//     let next = (current + 1) % slides.length;
+//     showSlide(next);
+// }, 5000);
