@@ -9,6 +9,20 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Rock+3D&family=Zen+Kaku+Gothic+New&display=swap"
         rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+JP:wght@100..900&family=Rock+3D&family=Zen+Kaku+Gothic+New&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Rock+3D&family=Zen+Kaku+Gothic+New&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Rock+3D&family=Zen+Kaku+Gothic+New&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Rock+3D&family=Zen+Kaku+Gothic+New&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="./css/style.min.css">
 </head>
 
@@ -22,12 +36,12 @@
             </button>
             <nav class="toc nav">
                 <ul class="nav__navlist">
-                    <li><a href="./index.html">トップ</a></li>
-                    <li><a href="./works/index.html">作ったもの・デザインしたもの</a></li>
-                    <li class="nav__navlist--work"><a href="./works/index.html?filter=web">Ｗｅｂデザイン</a></li>
-                    <li class="nav__navlist--work"><a href="./works/index.html?filter=uiux">ＵＩ・ＵＸデザイン</a></li>
-                    <li class="nav__navlist--work"><a href="./works/index.html?filter=graphic">グラフィックデザイン</a></li>
-                    <li><a href="./about/index.html">わたしについて</a></li>
+                    <li><a href="/">トップ</a></li>
+                    <li><a href="/works/">作ったもの・デザインしたもの</a></li>
+                    <li class="nav__navlist--work"><a href="/works/?filter=web">Ｗｅｂデザイン</a></li>
+                    <li class="nav__navlist--work"><a href="/works/?filter=uiux">ＵＩ・ＵＸデザイン</a></li>
+                    <li class="nav__navlist--work"><a href="/works/?filter=graphic">グラフィックデザイン</a></li>
+                    <li><a href="/about/">わたしについて</a></li>
                     <li><a href="https://land-jj22.vivian.jp/blog/" target="_blank" rel="noopener noreferrer">ブログ</a>
                     </li>
                     <li><a href="mailto:riku.kishimoto22@gmail.com">お問い合わせ</a></li>
@@ -35,72 +49,95 @@
             </nav>
             <div class="toc-overlay"></div>
         </div>
+        <div class="cursor">
+            <div class="cursor__dot" id="cursorDot"></div>
+            <div class="cursor__ring" id="cursorRing"></div>
+        </div>
+
         <section class="fv">
+
+            <nav class="fv__nav">
+                <div class="fv__nav-logo">R.FOLIO</div>
+            </nav>
+
+            <div class="fv__wipe" id="wipe"></div>
+
             <div class="fv__slider">
-                <div class="fv__slide is-active">
+
+                <div class="fv__slide is-active" data-index="0">
                     <div class="fv__img">
-                        <img src="./images/top_fv.png" alt="">
+                        <img src="./images/top_fv.webp" alt="">
                     </div>
                     <div class="fv__content">
-                        <h2 class="fv__title fv__title--main">R.FOLIO</h2>
-                        <p class="fv__sub">
-                            Portfolio by Riku.
-                        </p>
+                        <p class="fv__label">Portfolio 2026</p>
+                        <h1 class="fv__title--main">R.FOLIO</h1>
+                        <p class="fv__sub">Portfolio by Riku.</p>
                     </div>
-                </div>
-                <div class="fv__slide">
-                    <div class="fv__img">
-                        <a href="./works/hibiseitai/index.html"><img src="./images/hibi_fv.png" alt=""></a>
-                    </div>
-                    <div class="fv__content">
-                        <a href="./works/hibiseitai/index.html">
-                            <h2 class="fv__title">日比整体 だいせんじ接骨院｜公式サイト</h2>
-                            <div class="fv__tag">
-                                <p>#Webデザイン</p>
-                                <p>#コーディング</p>
-                            </div>
-                            <p class="fv__text">
-                                「日比整体 だいせんじ接骨院」様のWebサイトのリニューアルを行いました。
-                            </p>
-                        </a>
-                    </div>
-                </div>
-                <div class="fv__slide">
-                    <div class="fv__img">
-                        <a href="./works/hibiseitai/index.html"><img src="./images/r.log_fv.png" alt=""></a>
-                    </div>
-                    <div class="fv__content">
-                        <a href="./works/hibiseitai/index.html">
-                            <h2 class="fv__title">R.LOG｜オリジナルブログサイト</h2>
-                            <div class="fv__tag">
-                                <p>#Webデザイン</p>
-                                <p>#コーディング</p>
-                            </div>
-                            <p class="fv__text">
-                                1年生前期の集大成として制作したブログサイトです。
-                            </p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <!-- <div class="fv__progress">
-                <div class="fv__bar">
-                    <span class="fv__bar-inner"></span>
                 </div>
 
-                <div class="fv__dots">
+
+                <div class="fv__slide" data-index="1">
+                    <div class="fv__img">
+                        <a href="./works/hibiseitai/index.html">
+                            <img src="./images/hibi_fv.webp" alt="日比整体">
+                        </a>
+                    </div>
+                    <div class="fv__content">
+                        <h2 class="fv__title">日比整体だいせんじ接骨院｜公式サイト</h2>
+                        <div class="fv__tag">
+                            <span>#Webデザイン</span>
+                            <span>#コーディング</span>
+                        </div>
+                        <p class="fv__text">「日比整体 だいせんじ接骨院」様のWebサイトのリニューアルを行いました。</p>
+                        <a href="./works/hibiseitai/index.html" class="fv__arrow">
+                            <span class="fv__arrow-line"></span>
+                            詳しくみる
+                        </a>
+                    </div>
+                </div>
+
+                <div class="fv__slide" data-index="2">
+                    <div class="fv__img">
+                        <a href="./works/blog/index.html">
+                            <img src="./images/r.log_fv.webp" alt="R.LOG">
+                        </a>
+                    </div>
+                    <div class="fv__content">
+                        <h2 class="fv__title">R.LOG｜オリジナルブログサイト</h2>
+                        <div class="fv__tag">
+                            <span>#Webデザイン</span>
+                            <span>#コーディング</span>
+                        </div>
+                        <p class="fv__text">1年生前期の集大成として制作したブログサイトです。</p>
+                        <a href="./works/blog/index.html" class="fv__arrow">
+                            <span class="fv__arrow-line"></span>
+                            詳しくみる
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="fv__counter">
+                <span class="fv__counter-cur" id="counterCur">01</span>
+                <span class="fv__counter-sep">/</span>
+                <span class="fv__counter-total">03</span>
+            </div>
+
+            <div class="fv__progress">
+                <div class="fv__bar">
+                    <span class="fv__bar-inner" id="barInner"></span>
+                </div>
+                <div class="fv__dots" id="dotsWrap">
                     <button class="fv__dot is-active"></button>
                     <button class="fv__dot"></button>
                     <button class="fv__dot"></button>
                 </div>
-            </div> -->
-        </section>
-        <!-- <div class="scrollbar">
-            <div class="scrollbar__text">SCROLL</div>
-            <div class="scrollbar__line">
-                <div class="scrollbar__line--yellow"></div>
             </div>
-        </div> -->
+
+            <div class="fv__drag"></div>
+
+        </section>
     </header>
 
     <main class="top__main">
@@ -109,7 +146,7 @@
                 <article class="post post--top" data-category="web">
                     <a href="./works/hibiseitai/index.html">
                         <div class="post__img">
-                            <img src="./images/hibiseitai_cap.png" alt="">
+                            <img src="./images/hibiseitai_cap.webp" alt="">
                         </div>
                     </a>
                     <a href="./works/hibiseitai/index.html">
@@ -123,27 +160,10 @@
                         </div>
                     </a>
                 </article>
-                <!-- <article class="post post--top" data-category="web">
-                    <a href="./works/portfolio/index.html">
-                        <div class="post__img">
-                            <img src="./images/hibiseitai_cap.png" alt="">
-                        </div>
-                    </a>
-                    <a href="./works/portfolio/index.html">
-                        <h2 class="post__title">【Webサイト】R.FOLIO｜ポートフォリオサイト</h2>
-                        <div class="post__tag">
-                            <p>#Webデザイン</p>
-                            <p>#コーディング</p>
-                        </div>
-                        <div class="post__text">
-                            <p>1年生前期の集大成として制作したブログサイトです。</p>
-                        </div>
-                    </a>
-                </article> -->
                 <article class="post post--top" data-category="web">
                     <a href="./works/blog/index.html">
                         <div class="post__img">
-                            <img src="./images/r.log_cap.png" alt="">
+                            <img src="./images/r.log_cap.webp" alt="">
                         </div>
                     </a>
                     <a href="./works/blog/index.html">
@@ -160,7 +180,7 @@
                 <article class="post post--top" data-category="web">
                     <a href="./works/wafu/index.html">
                         <div class="post__img">
-                            <img src="./images/wafu.png" alt="">
+                            <img src="./images/wafu.webp" alt="">
                         </div>
                     </a>
                     <a href="./works/wafu/index.html">
@@ -197,18 +217,18 @@
                         <img src="./images/mainvisual.webp" alt="">
                     </div>
                 </div>
-                <a href="./about/index.html" class="btn-circle-arrow">
-                    詳しくみる
-                    <span class="btn-circle-arrow__icon">
-                        <svg viewBox="0 0 40 40">
-                            <circle class="base" cx="20" cy="20" r="18"></circle>
-                            <circle class="main" cx="20" cy="20" r="18"></circle>
-                            <path d="M14 20 H26" />
-                            <path d="M22 16 L26 20 L22 24" />
-                        </svg>
-                    </span>
-                </a>
             </section>
+            <a href="./about/index.html" class="btn-circle-arrow btn-circle-arrow--about">
+                詳しくみる
+                <span class="btn-circle-arrow__icon">
+                    <svg viewBox="0 0 40 40">
+                        <circle class="base" cx="20" cy="20" r="18"></circle>
+                        <circle class="main" cx="20" cy="20" r="18"></circle>
+                        <path d="M14 20 H26" />
+                        <path d="M22 16 L26 20 L22 24" />
+                    </svg>
+                </span>
+            </a>
         </div>
     </main>
 
@@ -216,12 +236,12 @@
         <div class="footer__inner">
             <nav class="nav">
                 <ul class="nav__navlist">
-                    <li><a href="./index.html">トップ</a></li>
-                    <li><a href="./works/index.html">作ったもの・デザインしたもの</a></li>
-                    <li class="nav__navlist--work"><a href="./works/index.html?filter=web">Ｗｅｂデザイン</a></li>
-                    <li class="nav__navlist--work"><a href="./works/index.html?filter=uiux">ＵＩ・ＵＸデザイン</a></li>
-                    <li class="nav__navlist--work"><a href="./works/index.html?filter=graphic">グラフィックデザイン</a></li>
-                    <li><a href="./about/index.html">わたしについて</a></li>
+                    <li><a href="/">トップ</a></li>
+                    <li><a href="/works/">作ったもの・デザインしたもの</a></li>
+                    <li class="nav__navlist--work"><a href="/works/?filter=web">Ｗｅｂデザイン</a></li>
+                    <li class="nav__navlist--work"><a href="/works/?filter=uiux">ＵＩ・ＵＸデザイン</a></li>
+                    <li class="nav__navlist--work"><a href="/works/?filter=graphic">グラフィックデザイン</a></li>
+                    <li><a href="/about/">わたしについて</a></li>
                     <li><a href="https://land-jj22.vivian.jp/blog/" target="_blank" rel="noopener noreferrer">ブログ</a>
                     </li>
                     <li><a href="mailto:riku.kishimoto22@gmail.com">お問い合わせ</a></li>
