@@ -10,6 +10,42 @@ body {
   color: #000041;
   background-color: #FCFCFC;
 }
+body p {
+  line-height: 1.7;
+  letter-spacing: 0.08em;
+}
+
+.bold {
+  font-size: 1.125rem;
+  font-weight: bold;
+  margin-top: 0.625rem;
+  margin-bottom: 0.625rem;
+}
+
+.list {
+  display: grid;
+  row-gap: 0.3125rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.text {
+  margin-top: 0.625rem;
+  margin-bottom: 0.625rem;
+}
+
+.figma {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+}
+.figma iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
 
 .header {
   transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -318,11 +354,17 @@ body.no-scroll {
 .color__swatch--main--wafu {
   background-color: #1c1c1c;
 }
+.color__swatch--main--post {
+  background-color: #ceada8;
+}
 .color__swatch--accent {
   background-color: #FEF6D7;
 }
 .color__swatch--accent--wafu {
   background-color: #b42141;
+}
+.color__swatch--accent--post {
+  background-color: #C47459;
 }
 .color__swatch--text {
   background-color: #001F3F;
@@ -330,11 +372,17 @@ body.no-scroll {
 .color__swatch--text--wafu {
   background-color: #1c1c1c;
 }
+.color__swatch--text--post {
+  background-color: #AB675C;
+}
 .color__swatch--base {
   background-color: #FFFFFF;
 }
 .color__swatch--base--wafu {
   background-color: #FFFFFB;
+}
+.color__swatch--base--post {
+  background-color: #FEFEFE;
 }
 .color__name {
   color: #C2C2C2;
@@ -1249,13 +1297,14 @@ body.no-scroll {
 }
 .explanation__h5 {
   margin-top: 1.5625rem;
+  margin-bottom: 0.625rem;
   color: #C2C2C2;
   font-size: 1rem;
   font-weight: bold;
 }
 .explanation__text {
   font-size: 1rem;
-  margin-top: 0.9375rem;
+  margin-top: 0.3125rem;
   margin-bottom: 0.9375rem;
 }
 .explanation__text p {
@@ -1264,6 +1313,9 @@ body.no-scroll {
 }
 .explanation__text a span {
   color: #000041;
+}
+.explanation__text--top {
+  margin-top: 1.875rem;
 }
 .explanation__list {
   display: grid;
@@ -1373,6 +1425,9 @@ body.no-scroll {
     grid-template-columns: 450px 490px;
     -moz-column-gap: 3.75rem;
          column-gap: 3.75rem;
+  }
+  .explanation__works--post {
+    grid-template-columns: 450px 450px;
   }
 }
 .explanation__opus {
