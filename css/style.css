@@ -357,6 +357,9 @@ body.no-scroll {
 .color__swatch--main--post {
   background-color: #ceada8;
 }
+.color__swatch--main--manga {
+  background-color: #000000;
+}
 .color__swatch--accent {
   background-color: #FEF6D7;
 }
@@ -365,6 +368,9 @@ body.no-scroll {
 }
 .color__swatch--accent--post {
   background-color: #C47459;
+}
+.color__swatch--accent--manga {
+  background-color: #AAAAAA;
 }
 .color__swatch--text {
   background-color: #001F3F;
@@ -383,6 +389,9 @@ body.no-scroll {
 }
 .color__swatch--base--post {
   background-color: #FEFEFE;
+}
+.color__swatch--base--manga {
+  background-color: #fff;
 }
 .color__name {
   color: #C2C2C2;

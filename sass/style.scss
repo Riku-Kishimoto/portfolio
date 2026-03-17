@@ -489,6 +489,10 @@ body.no-scroll {
             &--post {
                 background-color: #ceada8;
             }
+
+            &--manga {
+                background-color: #000000;
+            }
         }
 
         &--accent {
@@ -500,6 +504,10 @@ body.no-scroll {
 
             &--post {
                 background-color: #C47459;
+            }
+
+            &--manga {
+                background-color: #AAAAAA;
             }
 
         }
@@ -525,6 +533,10 @@ body.no-scroll {
 
             &--post {
                 background-color: #FEFEFE;
+            }
+
+            &--manga {
+                background-color: #fff;
             }
         }
     }
