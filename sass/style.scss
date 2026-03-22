@@ -137,6 +137,11 @@ body {
         line-height: 1.7;
         letter-spacing: 0.08em;
     }
+
+    &::selection {
+        background-color: $color-main;
+        color: $color-bg;
+    }
 }
 
 .bold {
