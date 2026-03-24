@@ -1473,8 +1473,14 @@ body.no-scroll {
     }
 
     &__tag {
+        display: flex;
+        column-gap: rem(10);
         font-size: rem(16);
         margin-bottom: rem(50);
+
+        p {
+            align-items: center;
+        }
 
         @include mq(desktop) {
             font-size: rem(18);
@@ -1841,7 +1847,7 @@ body.no-scroll {
     &__img {
         width: 60%;
         margin: 0 auto;
-        aspect-ratio: 4 / 5;
+        aspect-ratio: 4 / 6;
         order: 1;
 
         @include mq(desktop) {

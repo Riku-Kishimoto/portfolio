@@ -1338,8 +1338,14 @@ body.no-scroll {
   display: grid;
 }
 .explanation__tag {
+  display: flex;
+  -moz-column-gap: 0.625rem;
+       column-gap: 0.625rem;
   font-size: 1rem;
   margin-bottom: 3.125rem;
+}
+.explanation__tag p {
+  align-items: center;
 }
 @media (width >= 1024px) {
   .explanation__tag {
@@ -1678,7 +1684,7 @@ body.no-scroll {
 .about__img {
   width: 60%;
   margin: 0 auto;
-  aspect-ratio: 4/5;
+  aspect-ratio: 4/6;
   order: 1;
 }
 @media (width >= 1024px) {
