@@ -42,14 +42,14 @@ const tocBtn = document.querySelector('.toc-btn');
 const toc = document.querySelector('.toc');
 const overlay = document.querySelector('.toc-overlay');
 
-tocBtn.addEventListener('click', () => {
+tocBtn.addEventListener('mouseenter', () => {
     toc.classList.toggle('active');
     overlay.classList.toggle('active');
     tocBtn.classList.toggle('active');
     document.body.classList.toggle('no-scroll');
 });
 
-overlay.addEventListener('click', () => {
+overlay.addEventListener('mouseleave', () => {
     toc.classList.remove('active');
     overlay.classList.remove('active');
     tocBtn.classList.remove('active');
@@ -167,7 +167,6 @@ function startAuto() {
     timer = setTimeout(nextSlide, DURATION);
 }
 
-// 初期表示専用：current === next のガードをスキップ
 function initSlide() {
     slides[0].classList.add('is-entering');
     slides[0].classList.add('is-active');
@@ -307,61 +306,6 @@ if (fv) {
 
 }
 
-// showSlide(0) → initSlide() に変更
 setTimeout(() => {
     initSlide();
 }, 50);
-//ファーストビュー
-
-// const slides = document.querySelectorAll(".fv__slide");
-// const dots = document.querySelectorAll(".fv__dot");
-// const bar = document.querySelector(".fv__bar-inner");
-// let current = 0;
-// const slideDuration = 5000;
-// let slideInterval;
-
-// function startProgress() {
-//     if (!bar) return;
-//     bar.style.transition = 'none';
-//     bar.style.width = '0%';
-
-//     // Force reflow
-//     void bar.offsetWidth;
-
-//     bar.style.transition = `width ${slideDuration}ms linear`;
-//     bar.style.width = '100%';
-// }
-
-// function showSlide(index) {
-//     if (slides.length === 0) return;
-
-//     slides.forEach(slide => slide.classList.remove("is-active"));
-//     if (dots.length > 0) {
-//         dots.forEach(dot => dot.classList.remove("is-active"));
-//         if (dots[index]) dots[index].classList.add("is-active");
-//     }
-
-//     slides[index].classList.add("is-active");
-
-//     current = index;
-//     startProgress();
-
-//     clearInterval(slideInterval);
-//     slideInterval = setInterval(nextSlide, slideDuration);
-// }
-
-// function nextSlide() {
-//     let next = (current + 1) % slides.length;
-//     showSlide(next);
-// }
-
-// if (slides.length > 0) {
-//     if (dots.length > 0) {
-//         dots.forEach((dot, index) => {
-//             dot.addEventListener("click", () => {
-//                 showSlide(index);
-//             });
-//         });
-//     }
-//     showSlide(0);
-// }

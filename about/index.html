@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>わたしについて｜R.FOLIO</title>
-    <!-- <base href="/portfolio/"> -->
+    <base href="/portfolio/">
     <link rel="apple-touch-icon-precomposed" href="images/r.folio-app.png" />
     <meta property="og:url" content="https://land-jj22.vivian.jp/portfolio/about/" />
     <meta property="og:title" content="わたしについて｜R.FOLIO" />
@@ -20,7 +20,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Rock+3D&family=Zen+Kaku+Gothic+New&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.min.css">
+    <link rel="stylesheet" href="css/style.min.css">
 </head>
 
 <body>
@@ -28,25 +28,27 @@
         <div class="header__inner">
 
             <h1 class="header__title">わたしについて</h1>
-            <button class="toc-btn">
-                <span class="toc-btn__open">目次</span>
-                <span class="toc-btn__close"></span>
-            </button>
-
-            <nav class="toc nav">
-                <ul class="nav__navlist">
-                    <li><a href="./">トップ</a></li>
-                    <li><a href="works/">作ったもの・デザインしたもの</a></li>
-                    <li class="nav__navlist--work"><a href="works/?filter=web">Ｗｅｂデザイン</a></li>
-                    <li class="nav__navlist--work"><a href="works/?filter=uiux">ＵＩ・ＵＸデザイン</a></li>
-                    <li class="nav__navlist--work"><a href="works/?filter=graphic">グラフィックデザイン</a></li>
-                    <li><a href="about/">わたしについて</a></li>
-                    <li><a href="https://land-jj22.vivian.jp/blog/" target="_blank" rel="noopener noreferrer">ブログ</a>
-                    </li>
-                    <li><a href="mailto:riku.kishimoto22@gmail.com">お問い合わせ</a></li>
-                </ul>
-            </nav>
-            <div class="toc-overlay"></div>
+            <div class="toc__wrap">
+                <button class="toc-btn">
+                    <span class="toc-btn__open">目次</span>
+                    <span class="toc-btn__close"></span>
+                </button>
+                <nav class="toc nav">
+                    <ul class="nav__navlist">
+                        <li><a href="./">トップ</a></li>
+                        <li><a href="works/">作ったもの・デザインしたもの</a></li>
+                        <li class="nav__navlist--work"><a href="works/?filter=web">Ｗｅｂデザイン</a></li>
+                        <li class="nav__navlist--work"><a href="works/?filter=uiux">ＵＩ・ＵＸデザイン</a></li>
+                        <li class="nav__navlist--work"><a href="works/?filter=graphic">グラフィックデザイン</a></li>
+                        <li><a href="about/">わたしについて</a></li>
+                        <li><a href="https://land-jj22.vivian.jp/blog/" target="_blank"
+                                rel="noopener noreferrer">ブログ</a>
+                        </li>
+                        <li><a href="mailto:riku.kishimoto22@gmail.com">お問い合わせ</a></li>
+                    </ul>
+                </nav>
+                <div class="toc-overlay"></div>
+            </div>
         </div>
     </header>
 
@@ -192,7 +194,7 @@
                         </div>
                     </div>
                 </article>
-                <article class="explanation__hearing">
+                <!-- <article class="explanation__hearing">
                     <h4 class="explanation__subtitle">すきなもの</h4>
                     <div class="explanation__photo">
                         <div class="explanation__item">
@@ -206,7 +208,7 @@
                             <img src="images/hibi_photo.webp" alt="">
                         </div>
                     </div>
-                </article>
+                </article> -->
             </div>
         </section>
     </main>
