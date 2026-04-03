@@ -1573,6 +1573,10 @@ body.no-scroll {
                 column-gap: rem(50);
                 grid-template-columns: 450px 490px;
             }
+
+            &--top {
+                margin-top: rem(40);
+            }
         }
     }
 
