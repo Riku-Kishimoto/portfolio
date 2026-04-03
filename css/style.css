@@ -233,10 +233,12 @@ body.no-scroll {
   pointer-events: none;
   transition: 0.3s ease;
   z-index: 998;
+  visibility: hidden;
 }
 
 .toc-overlay.active {
   opacity: 1;
+  pointer-events: auto;
   pointer-events: auto;
 }
 

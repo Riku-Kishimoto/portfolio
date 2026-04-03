@@ -38,23 +38,52 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 //ハンバーガーメニュー
+
 const tocBtn = document.querySelector('.toc-btn');
 const toc = document.querySelector('.toc');
 const overlay = document.querySelector('.toc-overlay');
 
-tocBtn.addEventListener('mouseenter', () => {
-    toc.classList.toggle('active');
-    overlay.classList.toggle('active');
-    tocBtn.classList.toggle('active');
-    document.body.classList.toggle('no-scroll');
-});
+let closeTimer = null;
 
-overlay.addEventListener('mouseleave', () => {
+function openMenu() {
+    clearTimeout(closeTimer);
+    toc.classList.add('active');
+    overlay.classList.add('active');
+    tocBtn.classList.add('active');
+    document.body.classList.add('no-scroll');
+}
+
+function scheduleClose() {
+    closeTimer = setTimeout(closeMenu, 300);
+}
+
+function closeMenu() {
     toc.classList.remove('active');
     overlay.classList.remove('active');
     tocBtn.classList.remove('active');
     document.body.classList.remove('no-scroll');
+}
+
+const isTouchDevice = window.matchMedia('(hover: none)').matches;
+
+if (isTouchDevice) {
+    tocBtn.addEventListener('click', () => {
+        tocBtn.classList.contains('active') ? closeMenu() : openMenu();
+    });
+} else {
+    tocBtn.addEventListener('mouseenter', () => {
+        tocBtn.classList.contains('active') ? closeMenu() : openMenu();
+    });
+    tocBtn.addEventListener('mouseleave', scheduleClose);
+    toc.addEventListener('mouseenter', () => clearTimeout(closeTimer));
+    toc.addEventListener('mouseleave', scheduleClose);
+}
+
+overlay.addEventListener('click', closeMenu);
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMenu();
 });
+
 //ハンバーガーメニューここまで
 
 //works表示切り替え
