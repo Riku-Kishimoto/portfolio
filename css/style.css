@@ -45,7 +45,7 @@ body::selection {
 .figma {
   position: relative;
   width: 100%;
-  padding-top: 56.25%;
+  padding-top: 200%;
 }
 .figma iframe {
   position: absolute;
@@ -53,6 +53,11 @@ body::selection {
   width: 100%;
   height: 100%;
   border: none;
+}
+@media (width >= 1024px) {
+  .figma {
+    padding-top: 56.25%;
+  }
 }
 
 .header {
