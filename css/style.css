@@ -282,6 +282,21 @@ body.no-scroll {
   background-color: #000041;
 }
 
+.git {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.git__icon {
+  display: inline-block;
+  width: 1.5625rem;
+  height: 1.5625rem;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+.git__text {
+  display: inline-block;
+}
+
 .nav__navlist {
   font-size: 1rem;
   writing-mode: vertical-rl;
@@ -575,7 +590,7 @@ body.no-scroll {
 }
 .fv__img {
   position: relative;
-  overflow-x: hidden;
+  overflow: hidden;
   height: 50svh;
   flex-shrink: 0;
 }

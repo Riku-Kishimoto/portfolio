@@ -413,6 +413,23 @@ body.no-scroll {
     }
 }
 
+.git {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    &__icon {
+        display: inline-block;
+        width: rem(25);
+        height: rem(25);
+        fill: currentColor;
+        flex-shrink: 0;
+    }
+
+    &__text {
+        display: inline-block;
+    }
+}
+
 .nav {
     &__navlist {
         font-size: rem(16);
@@ -750,7 +767,7 @@ body.no-scroll {
 
     &__img {
         position: relative;
-        overflow-x: hidden;
+        overflow: hidden;
         height: 50svh;
         flex-shrink: 0;
 
