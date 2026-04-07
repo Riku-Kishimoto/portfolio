@@ -80,6 +80,13 @@ if (isTouchDevice) {
 }
 
 overlay.addEventListener('click', closeMenu);
+
+toc.addEventListener('click', (e) => {
+    if (e.target === toc) {
+        closeMenu();
+    }
+});
+
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeMenu();
 });
@@ -338,3 +345,60 @@ if (fv) {
 setTimeout(() => {
     initSlide();
 }, 50);
+
+
+// ツールチップ
+
+// const tips = document.querySelectorAll('.tip');
+// let activeBubble = null;
+
+// function showBubble(tip) {
+//     hideBubble();
+
+//     const bubble = document.createElement('span');
+//     bubble.className = 'tip-bubble';
+//     bubble.textContent = tip.dataset.tip;
+//     document.body.appendChild(bubble);
+//     activeBubble = bubble;
+
+//     positionBubble(tip, bubble);
+// }
+
+// function positionBubble(tip, bubble) {
+//     const rect = tip.getBoundingClientRect();
+//     const bubbleRect = bubble.getBoundingClientRect();
+
+//     let left = rect.left + rect.width / 2 - bubbleRect.width / 2 + window.scrollX;
+//     let top = rect.top - bubbleRect.height - 10 + window.scrollY;
+
+//     if (left + bubbleRect.width > window.innerWidth - 12) {
+//         left = rect.right - bubbleRect.width + window.scrollX;
+//     }
+//     if (left < 12) left = 12;
+
+//     bubble.style.left = left + 'px';
+//     bubble.style.top = top + 'px';
+//     bubble.style.opacity = '1';
+// }
+
+// function hideBubble() {
+//     if (activeBubble) {
+//         activeBubble.remove();
+//         activeBubble = null;
+//     }
+// }
+
+// tips.forEach(tip => {
+//     tip.addEventListener('mouseenter', () => showBubble(tip));
+//     tip.addEventListener('mouseleave', hideBubble);
+
+//     tip.addEventListener('touchstart', e => {
+//         e.preventDefault();
+//         if (activeBubble) { hideBubble(); return; }
+//         showBubble(tip);
+//     }, { passive: false });
+// });
+
+// document.addEventListener('touchstart', e => {
+//     if (!e.target.closest('.tip')) hideBubble();
+// });
