@@ -349,56 +349,73 @@ setTimeout(() => {
 
 // ツールチップ
 
-// const tips = document.querySelectorAll('.tip');
-// let activeBubble = null;
+const tips = document.querySelectorAll('.tip');
+let activeBubble = null;
 
-// function showBubble(tip) {
-//     hideBubble();
+function showBubble(tip) {
+    hideBubble();
 
-//     const bubble = document.createElement('span');
-//     bubble.className = 'tip-bubble';
-//     bubble.textContent = tip.dataset.tip;
-//     document.body.appendChild(bubble);
-//     activeBubble = bubble;
+    const bubble = document.createElement('div');
+    bubble.className = 'tip-bubble';
 
-//     positionBubble(tip, bubble);
-// }
+    const id = tip.dataset.tipId;
+    if (id) {
+        const tmpl = document.getElementById(id);
+        if (tmpl) bubble.appendChild(tmpl.content.cloneNode(true));
+    } else {
+        bubble.innerHTML = tip.dataset.tip;
+    }
 
-// function positionBubble(tip, bubble) {
-//     const rect = tip.getBoundingClientRect();
-//     const bubbleRect = bubble.getBoundingClientRect();
+    // SVG矢印
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('class', 'tip-arrow');
+    svg.setAttribute('width', '20');
+    svg.setAttribute('height', '10');
+    svg.setAttribute('viewBox', '0 0 14 7');
+    svg.innerHTML = `<path d="M0 0 L7 7 L14 0" fill="#FCFCFC" stroke="#FCFCFC" stroke-width="1" stroke-linejoin="round"/>`;
+    bubble.appendChild(svg);
 
-//     let left = rect.left + rect.width / 2 - bubbleRect.width / 2 + window.scrollX;
-//     let top = rect.top - bubbleRect.height - 10 + window.scrollY;
+    document.body.appendChild(bubble);
+    activeBubble = bubble;
 
-//     if (left + bubbleRect.width > window.innerWidth - 12) {
-//         left = rect.right - bubbleRect.width + window.scrollX;
-//     }
-//     if (left < 12) left = 12;
+    positionBubble(tip, bubble);
+}
 
-//     bubble.style.left = left + 'px';
-//     bubble.style.top = top + 'px';
-//     bubble.style.opacity = '1';
-// }
+function positionBubble(tip, bubble) {
+    const rect = tip.getBoundingClientRect();
+    const bubbleRect = bubble.getBoundingClientRect();
 
-// function hideBubble() {
-//     if (activeBubble) {
-//         activeBubble.remove();
-//         activeBubble = null;
-//     }
-// }
+    let left = rect.left + rect.width / 2 - bubbleRect.width / 2 + window.scrollX;
+    let top = rect.top - bubbleRect.height - 10 + window.scrollY;
 
-// tips.forEach(tip => {
-//     tip.addEventListener('mouseenter', () => showBubble(tip));
-//     tip.addEventListener('mouseleave', hideBubble);
+    if (left + bubbleRect.width > window.innerWidth - 12) {
+        left = rect.right - bubbleRect.width + window.scrollX;
+    }
+    if (left < 12) left = 12;
 
-//     tip.addEventListener('touchstart', e => {
-//         e.preventDefault();
-//         if (activeBubble) { hideBubble(); return; }
-//         showBubble(tip);
-//     }, { passive: false });
-// });
+    bubble.style.left = left + 'px';
+    bubble.style.top = top + 'px';
+    bubble.style.opacity = '1';
+}
 
-// document.addEventListener('touchstart', e => {
-//     if (!e.target.closest('.tip')) hideBubble();
-// });
+function hideBubble() {
+    if (activeBubble) {
+        activeBubble.remove();
+        activeBubble = null;
+    }
+}
+
+tips.forEach(tip => {
+    tip.addEventListener('mouseenter', () => showBubble(tip));
+    tip.addEventListener('mouseleave', hideBubble);
+
+    tip.addEventListener('touchstart', e => {
+        e.preventDefault();
+        if (activeBubble) { hideBubble(); return; }
+        showBubble(tip);
+    }, { passive: false });
+});
+
+document.addEventListener('touchstart', e => {
+    if (!e.target.closest('.tip')) hideBubble();
+});

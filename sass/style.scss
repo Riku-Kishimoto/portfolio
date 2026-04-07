@@ -656,84 +656,47 @@ body.no-scroll {
 }
 
 // ツールチップ
+.tip {
+    position: relative;
+    display: inline;
+    color: var(--color-text-primary);
+    border-bottom: rem(1) dashed currentColor;
+    cursor: help;
 
-// .tip {
-//     position: relative;
-//     display: inline;
-//     color: var(--color-text-primary);
-//     border-bottom: rem(1) dashed currentColor;
-//     cursor: help;
-// }
+    &__title {
+        font-size: rem(16);
+        font-weight: bold;
+        padding-bottom: rem(5);
+        margin-bottom: rem(5);
+        border-bottom: rem(1)dotted #000041;
+    }
+}
 
-// .tip-bubble {
-//     position: absolute;
-//     color: $color-main;
-//     background: $color-bg;
-//     border: rem(0.5) solid rgba(255, 255, 255, 0.15);
-//     border-radius: rem(10);
-//     padding: rem(10) rem(14);
-//     max-width: rem(220);
-//     font-size: rem(14);
-//     line-height: 1.55;
-//     box-shadow: 0 rem(4) rem(20) rgba(0, 0, 0, 0.12);
-//     opacity: 0;
-//     z-index: 9999;
-//     pointer-events: none;
-//     transition: opacity 0.15s ease;
-// }
+.tip-bubble {
+    position: absolute;
+    color: $color-main;
+    background: $color-bg;
+    border: rem(0.5) solid rgba(255, 255, 255, 0.15);
+    border-radius: rem(10);
+    padding: rem(10) rem(14);
+    max-width: rem(220);
+    font-size: rem(14);
+    line-height: 1.55;
+    box-shadow: 0 rem(4) rem(20) rgba(0, 0, 0, 0.12);
+    opacity: 0;
+    z-index: 9999;
+    pointer-events: none;
+    transition: opacity 0.15s ease;
+}
 
-// .tip-bubble::after {
-//     content: '';
-//     position: absolute;
-//     top: 100%;
-//     left: 50%;
-//     transform: translateX(-50%);
-//     border: rem(6) solid transparent;
-//     border-top-color: var(--color-border-secondary);
-// }
-
-// .tip-bubble::before {
-//     content: '';
-//     position: absolute;
-//     top: 100%;
-//     left: 50%;
-//     transform: translateX(-50%);
-//     margin-top: rem(-1);
-//     border: rem(6) solid transparent;
-//     border-top-color: var(--color-background-primary);
-//     z-index: 1;
-// }
-
-// .tip.align-right .tip-bubble {
-//     left: auto;
-//     right: 0;
-//     transform: translateX(0) translateY(4px);
-// }
-
-// .tip.align-right .tip-bubble::after,
-// .tip.align-right .tip-bubble::before {
-//     left: auto;
-//     right: rem(20);
-//     transform: none;
-// }
-
-// .tip:hover .tip-bubble {
-//     opacity: 1;
-//     transform: translateX(-50%) translateY(0);
-// }
-
-// .tip.align-right:hover .tip-bubble {
-//     transform: translateX(0) translateY(0);
-// }
-
-// .tip.active .tip-bubble {
-//     opacity: 1;
-//     transform: translateX(-50%) translateY(0);
-// }
-
-// .tip.align-right.active .tip-bubble {
-//     transform: translateX(0) translateY(0);
-// }
+.tip-arrow {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    overflow: visible;
+}
 
 // =================================================================
 //  top

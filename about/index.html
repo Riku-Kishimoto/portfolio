@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>わたしについて｜R.FOLIO</title>
-    <base href="/portfolio/">
+    <!-- <base href="/portfolio/"> -->
     <link rel="apple-touch-icon-precomposed" href="images/r.folio-app.png" />
     <meta property="og:url" content="https://land-jj22.vivian.jp/portfolio/about/" />
     <meta property="og:title" content="わたしについて｜R.FOLIO" />
@@ -20,7 +20,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Rock+3D&family=Zen+Kaku+Gothic+New&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="../css/style.min.css">
 </head>
 
 <body>
@@ -221,8 +221,13 @@
                             <div class="explanation__text">
                                 <p>
                                     ジャンルは問わずなんでも観ますが、特に<span class="tip"
-                                        data-tip="フィクションを、インタビューや手持ちカメラなどの手法を用いて、まるで実際のドキュメンタリー映像のように演出する表現技法です。「Mock（擬似）」と「Documentary」を組み合わせた造語です。">モキュメンタリー（フェイクドキュメンタリー）</span>が好きです。いちばん好きな作品は、洋画は『第9地区』、邦画は『今日の空が一番好き、とまだ言えない僕は』です。
+                                        data-tip-id="tip-moc">モキュメンタリー（フェイクドキュメンタリー）</span>が好きです。いちばん好きな作品は、洋画は『第9地区』、邦画は『今日の空が一番好き、とまだ言えない僕は』です。
                                 </p>
+                                <template id="tip-moc">
+                                    <h3 class="tip__title">モキュメンタリー</h3>
+                                    <p>フィクションを、インタビューや手持ちカメラなどの手法を用いて、まるで実際のドキュメンタリー映像のように演出する表現技法です。「Mock（擬似）」と「Documentary」を組み合わせた造語です。
+                                    </p>
+                                </template>
                             </div>
                         </div>
                         <div class="explanation__item">
@@ -262,7 +267,7 @@
             <p>&copy; R.FOLIO</p>
         </div>
     </footer>
-    <script src="js/style.js"></script>
+    <script src="../js/style.js"></script>
 </body>
 
 </html>

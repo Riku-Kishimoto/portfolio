@@ -487,6 +487,47 @@ body.no-scroll {
   margin-top: 1.25rem;
 }
 
+.tip {
+  position: relative;
+  display: inline;
+  color: var(--color-text-primary);
+  border-bottom: 0.0625rem dashed currentColor;
+  cursor: help;
+}
+.tip__title {
+  font-size: 1rem;
+  font-weight: bold;
+  padding-bottom: 0.3125rem;
+  margin-bottom: 0.3125rem;
+  border-bottom: 0.0625rem dotted #000041;
+}
+
+.tip-bubble {
+  position: absolute;
+  color: #000041;
+  background: #FCFCFC;
+  border: 0.03125rem solid rgba(255, 255, 255, 0.15);
+  border-radius: 0.625rem;
+  padding: 0.625rem 0.875rem;
+  max-width: 13.75rem;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.12);
+  opacity: 0;
+  z-index: 9999;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+
+.tip-arrow {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  overflow: visible;
+}
+
 .top {
   display: grid;
 }
