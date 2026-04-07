@@ -670,6 +670,10 @@ body.no-scroll {
         margin-bottom: rem(5);
         border-bottom: rem(1)dotted #000041;
     }
+
+    &__text {
+        font-size: rem(14);
+    }
 }
 
 .tip-bubble {
@@ -750,36 +754,36 @@ body.no-scroll {
     }
 }
 
-.cursor {
+// .cursor {
 
-    @include mq(desktop) {
-        position: fixed;
-        pointer-events: none;
-        z-index: 9999;
-        mix-blend-mode: difference;
+//     @include mq(desktop) {
+//         position: fixed;
+//         pointer-events: none;
+//         z-index: 9999;
+//         mix-blend-mode: difference;
 
-        &__dot {
-            position: fixed;
-            width: 8px;
-            height: 8px;
-            background: #fff;
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            transition: transform 0.1s;
-        }
+//         &__dot {
+//             position: fixed;
+//             width: 8px;
+//             height: 8px;
+//             background: #fff;
+//             border-radius: 50%;
+//             transform: translate(-50%, -50%);
+//             transition: transform 0.1s;
+//         }
 
-        &__ring {
-            position: fixed;
-            width: 36px;
-            height: 36px;
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            transition: transform 0.18s ease, width 0.25s ease, height 0.25s ease,
-                border-color 0.25s;
-        }
-    }
-}
+//         &__ring {
+//             position: fixed;
+//             width: 36px;
+//             height: 36px;
+//             border: 1px solid rgba(255, 255, 255, 0.5);
+//             border-radius: 50%;
+//             transform: translate(-50%, -50%);
+//             transition: transform 0.18s ease, width 0.25s ease, height 0.25s ease,
+//                 border-color 0.25s;
+//         }
+//     }
+// }
 
 .fv {
     position: relative;
