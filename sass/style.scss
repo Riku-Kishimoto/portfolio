@@ -604,6 +604,10 @@ body.no-scroll {
         font-size: rem(20);
         font-weight: bold;
     }
+
+    &__img {
+        margin-top: rem(20);
+    }
 }
 
 .pc-scroll ul {

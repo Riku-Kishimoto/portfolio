@@ -439,6 +439,9 @@ body.no-scroll {
   font-size: 1.25rem;
   font-weight: bold;
 }
+.layout__img {
+  margin-top: 1.25rem;
+}
 
 .pc-scroll ul {
   padding: 0;
