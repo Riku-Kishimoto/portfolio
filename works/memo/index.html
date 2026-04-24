@@ -1,153 +1,227 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>メモ帳｜R.FOLIO</title>
-    <base href="/portfolio/">
+    <base href="/portfolio/" />
     <link rel="apple-touch-icon-precomposed" href="images/r.folio-app.png" />
-    <meta property="og:url" content="https://land-jj22.vivian.jp/portfolio/works/memo/" />
+    <meta
+      property="og:url"
+      content="https://land-jj22.vivian.jp/portfolio/works/memo/"
+    />
     <meta property="og:title" content="メモ帳｜R.FOLIO" />
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="website" />
     <meta property="og:description" content="" />
-    <meta property="og:image" content="https://land-jj22.vivian.jp/portfolio/images/r.folio-ogp.png" />
+    <meta
+      property="og:image"
+      content="https://land-jj22.vivian.jp/portfolio/images/r.folio-ogp.png"
+    />
     <meta name="twitter:card" content="summary_large_image" />
     <meta property="og:site_name" content="R.FOLIO" />
     <meta property="og:locale" content="ja_JP" />
-    <link rel="icon" href="images/portfolio-fav.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/the-new-css-reset/css/reset.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="images/portfolio-fav.svg" type="image/svg+xml" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Rock+3D&family=Zen+Kaku+Gothic+New&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="css/style.min.css">
-</head>
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/the-new-css-reset/css/reset.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Rock+3D&family=Zen+Kaku+Gothic+New&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.min.css" />
+  </head>
 
-<body>
+  <body>
     <header class="header">
-        <div class="header__inner">
+      <div class="header__inner">
+        <h1 class="header__title">作ったもの・デザインしたもの</h1>
+        <div class="toc__wrap">
+          <button class="toc-btn">
+            <span class="toc-btn__open">目次</span>
+            <span class="toc-btn__close"></span>
+          </button>
 
-            <h1 class="header__title">作ったもの・デザインしたもの</h1>
-            <div class="toc__wrap">
+          <nav class="toc nav">
+            <ul class="nav__navlist">
+              <li><a href="./">トップ</a></li>
+              <li><a href="works/">作ったもの・デザインしたもの</a></li>
+              <li class="nav__navlist--work">
+                <a href="works/?filter=web">Ｗｅｂデザイン</a>
+              </li>
+              <li class="nav__navlist--work">
+                <a href="works/?filter=uiux">ＵＩデザイン</a>
+              </li>
+              <li class="nav__navlist--work">
+                <a href="works/?filter=graphic">グラフィックデザイン</a>
+              </li>
+              <li><a href="about/">わたしについて</a></li>
+              <li>
+                <a
+                  href="https://land-jj22.vivian.jp/blog/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >ブログ</a
+                >
+              </li>
+              <li>
+                <a href="mailto:riku.kishimoto22@gmail.com">お問い合わせ</a>
+              </li>
+            </ul>
+          </nav>
 
-                <button class="toc-btn">
-                    <span class="toc-btn__open">目次</span>
-                    <span class="toc-btn__close"></span>
-                </button>
-
-                <nav class="toc nav">
-                    <ul class="nav__navlist">
-                        <li><a href="./">トップ</a></li>
-                        <li><a href="works/">作ったもの・デザインしたもの</a></li>
-                        <li class="nav__navlist--work"><a href="works/?filter=web">Ｗｅｂデザイン</a></li>
-                        <li class="nav__navlist--work"><a href="works/?filter=uiux">ＵＩデザイン</a></li>
-                        <li class="nav__navlist--work"><a href="works/?filter=graphic">グラフィックデザイン</a></li>
-                        <li><a href="about/">わたしについて</a></li>
-                        <li><a href="https://land-jj22.vivian.jp/blog/" target="_blank"
-                                rel="noopener noreferrer">ブログ</a>
-                        </li>
-                        <li><a href="mailto:riku.kishimoto22@gmail.com">お問い合わせ</a></li>
-                    </ul>
-                </nav>
-
-                <div class="toc-overlay"></div>
-            </div>
+          <div class="toc-overlay"></div>
         </div>
+      </div>
     </header>
 
     <main class="main">
-        <section class="mainvisual">
-            <div class="mainvisual__inner">
-                <div class="mainvisual__img mainvisual__img--ver2">
-                    <img src="images/district9.webp" alt="">
-                </div>
-            </div>
-        </section>
+      <section class="mainvisual">
+        <div class="mainvisual__inner">
+          <div class="mainvisual__img mainvisual__img--ver2">
+            <img src="images/default.png" alt="" />
+          </div>
+        </div>
+      </section>
 
-        <section class="explanation">
-            <div class="explanation__inner">
-                <h3 class="explanation__title">メモ帳｜LOFT商品化応募作品</h3>
-                <div class="explanation__tag">
-                    <p>#グラフィックデザイン</p>
+      <section class="explanation">
+        <div class="explanation__inner">
+          <h3 class="explanation__title">メモ帳｜LOFT商品化応募作品</h3>
+          <div class="explanation__tag">
+            <p>#グラフィックデザイン</p>
+          </div>
+          <article class="explanation__about">
+            <div class="explanation__version">
+              <div class="explanation__item">
+                <h4 class="explanation__heading explanation__heading--top">
+                  概要
+                </h4>
+                <div class="explanation__text">
+                  <p>
+                    「レトロ印刷×ロフト メモ帳デザイン募集」に応募した作品です。
+                    レトロ印刷ならではの風合いを活かしたメモ帳をテーマに、日常的に使いやすいデザインを意識して制作しました。
+                  </p>
                 </div>
-                <article class="explanation__about">
-                    <div class="explanation__version">
-                        <div class="explanation__item">
-                            <h4 class="explanation__heading explanation__heading--top">概要</h4>
-                            <div class="explanation__text">
-                                <p>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="explanation__list list">
-                        <div class="list__item">
-                            <h5 class="list__title">制作期間</h5>
-                            <div class="list__text">
-                                <p>1週間</p>
-                            </div>
-                        </div>
-                        <div class="list__item">
-                            <h5 class="list__title">制作範囲</h5>
-                            <div class="list__text">
-                                <p>デザイン</p>
-                            </div>
-                        </div>
-                        <div class="list__item">
-                            <h5 class="list__title">使用ツール</h5>
-                            <div class="list__text">
-                                <p>Illustrator</p>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                <div class="nextworks">
-                    <h4 class="explanation__heading">次の作品</h4>
-                    <div class="nextworks__img"><a href="#"><img src="images/kari.png" alt=""></a></div>
-                    <div class="nextworks__all">
-                        <a href="works/" class="btn-circle-arrow">
-                            作品一覧ページへ
-                            <span class="btn-circle-arrow__icon">
-                                <svg viewBox="0 0 40 40">
-                                    <circle class="base" cx="20" cy="20" r="18"></circle>
-                                    <circle class="main" cx="20" cy="20" r="18"></circle>
-                                    <path d="M14 20 H26" />
-                                    <path d="M22 16 L26 20 L22 24" />
-                                </svg>
-                            </span>
-                        </a>
-                    </div>
-                </div>
+              </div>
             </div>
-        </section>
+            <div class="explanation__list list">
+              <div class="list__item">
+                <h5 class="list__title">制作期間</h5>
+                <div class="list__text">
+                  <p>1週間</p>
+                </div>
+              </div>
+              <div class="list__item">
+                <h5 class="list__title">制作範囲</h5>
+                <div class="list__text">
+                  <p>デザイン</p>
+                </div>
+              </div>
+              <div class="list__item">
+                <h5 class="list__title">使用ツール</h5>
+                <div class="list__text">
+                  <p>Illustrator</p>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="explanation__commitment">
+            <h4 class="explanation__subtitle">こだわったところ</h4>
+            <div class="explanation__works">
+              <div class="explanation__opus">
+                <h4 class="explanation__heading">完成デザイン</h4>
+                <img src="images/memo.webp" alt="" />
+              </div>
+              <div>
+                <div class="explanation__item">
+                  <h4 class="explanation__heading">コンセプト</h4>
+                  <div class="explanation__text">
+                    <p>
+                      映画のワンシーンに出てくるようなヴィンテージなデザインを目指しました。実用的な項目として「NO.」「DATE」「NAME」といった、劇中の記録に使われるような項目を配置しました。CHECKEDのスタンプを配置することで物語の背景を想像できるようにしています。シンプルなメモ帳ですが、壮大な物語が始まりそうな雰囲気を演出できたと思います。
+                    </p>
+                  </div>
+                </div>
+                <div class="explanation__version"></div>
+              </div>
+            </div>
+          </article>
+          <div class="nextworks">
+            <h4 class="explanation__heading">次の作品</h4>
+            <div>
+              <div class="nextworks__img">
+                <a href="works/hibiseitai/"
+                  ><img src="images/hibiseitai_cap.webp" alt=""
+                /></a>
+                <a href="works/hibiseitai/">
+                  <h2 class="post__title nextworks__title">
+                    【Webサイト】日比整体 だいせんじ接骨院
+                  </h2>
+                  <div class="post__tag">
+                    <p>#Webデザイン</p>
+                    <p>#コーディング</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="nextworks__all">
+              <a href="works/" class="btn-circle-arrow">
+                作品一覧ページへ
+                <span class="btn-circle-arrow__icon">
+                  <svg viewBox="0 0 40 40">
+                    <circle class="base" cx="20" cy="20" r="18"></circle>
+                    <circle class="main" cx="20" cy="20" r="18"></circle>
+                    <path d="M14 20 H26" />
+                    <path d="M22 16 L26 20 L22 24" />
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="footer">
-        <div class="footer__inner">
-            <nav class="nav">
-                <ul class="nav__navlist">
-                    <li><a href="./">トップ</a></li>
-                    <li><a href="works/">作ったもの・デザインしたもの</a></li>
-                    <li class="nav__navlist--work"><a href="works/?filter=web">Ｗｅｂデザイン</a></li>
-                    <li class="nav__navlist--work"><a href="works/?filter=uiux">ＵＩデザイン</a></li>
-                    <li class="nav__navlist--work"><a href="works/?filter=graphic">グラフィックデザイン</a></li>
-                    <li><a href="about/">わたしについて</a></li>
-                    <li><a href="https://land-jj22.vivian.jp/blog/" target="_blank" rel="noopener noreferrer">ブログ</a>
-                    </li>
-                    <li><a href="mailto:riku.kishimoto22@gmail.com">お問い合わせ</a></li>
-                </ul>
-            </nav>
-            <div class="footer__mail mail">
-                <a href="mailto:riku.kishimoto22@gmail.com">riku.kishimoto22@gmail.com</a>
-            </div>
+      <div class="footer__inner">
+        <nav class="nav">
+          <ul class="nav__navlist">
+            <li><a href="./">トップ</a></li>
+            <li><a href="works/">作ったもの・デザインしたもの</a></li>
+            <li class="nav__navlist--work">
+              <a href="works/?filter=web">Ｗｅｂデザイン</a>
+            </li>
+            <li class="nav__navlist--work">
+              <a href="works/?filter=uiux">ＵＩデザイン</a>
+            </li>
+            <li class="nav__navlist--work">
+              <a href="works/?filter=graphic">グラフィックデザイン</a>
+            </li>
+            <li><a href="about/">わたしについて</a></li>
+            <li>
+              <a
+                href="https://land-jj22.vivian.jp/blog/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >ブログ</a
+              >
+            </li>
+            <li>
+              <a href="mailto:riku.kishimoto22@gmail.com">お問い合わせ</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="footer__mail mail">
+          <a href="mailto:riku.kishimoto22@gmail.com"
+            >riku.kishimoto22@gmail.com</a
+          >
         </div>
-        <div class="footer__copy">
-            <p>&copy; R.FOLIO</p>
-        </div>
+      </div>
+      <div class="footer__copy">
+        <p>&copy; R.FOLIO</p>
+      </div>
     </footer>
     <script src="js/style.js"></script>
-</body>
-
+  </body>
 </html>
