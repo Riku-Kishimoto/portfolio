@@ -67,7 +67,7 @@ $breakpoints: (
 // メディアクエリ (モバイルファースト)
 // @param {string} $breakpoint - $breakpointsのキー
 @mixin mq($breakpoint: desktop) {
-  @media (width >=map-get($breakpoints, $breakpoint)) {
+  @media (min-width: map-get($breakpoints, $breakpoint)) {
     @content;
   }
 }

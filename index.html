@@ -1,289 +1,339 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>R.FOLIO</title>
-    <base href="/portfolio/">
+    <!-- <base href="/portfolio/" /> -->
     <link rel="apple-touch-icon-precomposed" href="images/r.folio-app.png" />
     <meta property="og:url" content="https://land-jj22.vivian.jp/portfolio/" />
     <meta property="og:title" content="R.FOLIO" />
-    <meta property="og:type" content="website">
-    <meta property="og:description" content="ポートフォリオサイトです。Webデザインやグラフィックデザインの作品・制作過程を掲載しています。" />
-    <meta property="og:image" content="https://land-jj22.vivian.jp/portfolio/images/r.folio-ogp.png" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:description"
+      content="ポートフォリオサイトです。Webデザインやグラフィックデザインの作品・制作過程を掲載しています。"
+    />
+    <meta
+      property="og:image"
+      content="https://land-jj22.vivian.jp/portfolio/images/r.folio-ogp.png"
+    />
     <meta name="twitter:card" content="summary_large_image" />
     <meta property="og:site_name" content="R.FOLIO" />
     <meta property="og:locale" content="ja_JP" />
-    <link rel="icon" href="images/portfolio-fav.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/the-new-css-reset/css/reset.min.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="images/portfolio-fav.svg" type="image/svg+xml" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Zen+Kaku+Gothic+New&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="css/style.min.css">
-</head>
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/the-new-css-reset/css/reset.min.css"
+    />
 
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Zen+Kaku+Gothic+New&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.min.css" />
+  </head>
+
+  <body>
     <header class="header">
-        <div class="header__inner">
-            <h1 class="header__title header__title--top"></h1>
-            <div class="toc__wrap">
-                <button class="toc-btn">
-                    <span class="toc-btn__open">目次</span>
-                    <span class="toc-btn__close"></span>
-                </button>
-                <nav class="toc nav">
-                    <ul class="nav__navlist">
-                        <li><a href="./">トップ</a></li>
-                        <li><a href="works/">作ったもの・デザインしたもの</a></li>
-                        <li class="nav__navlist--work"><a href="works/?filter=web">Ｗｅｂデザイン</a></li>
-                        <li class="nav__navlist--work"><a href="works/?filter=uiux">ＵＩデザイン</a></li>
-                        <li class="nav__navlist--work"><a href="works/?filter=graphic">グラフィックデザイン</a></li>
-                        <li><a href="about/">わたしについて</a></li>
-                        <li><a href="https://land-jj22.vivian.jp/blog/" target="_blank"
-                                rel="noopener noreferrer">ブログ</a>
-                        </li>
-                        <li><a href="mailto:riku.kishimoto22@gmail.com">お問い合わせ</a></li>
-                    </ul>
-                </nav>
-                <div class="toc-overlay"></div>
-            </div>
+      <div class="header__inner">
+        <h1 class="header__title header__title--top"></h1>
+        <div class="toc__wrap">
+          <button class="toc-btn">
+            <span class="toc-btn__open">目次</span>
+            <span class="toc-btn__close"></span>
+          </button>
+          <nav class="toc nav">
+            <ul class="nav__navlist">
+              <li><a href="./">トップ</a></li>
+              <li><a href="works/">作ったもの・デザインしたもの</a></li>
+              <li class="nav__navlist--work">
+                <a href="works/?filter=web">Ｗｅｂデザイン</a>
+              </li>
+              <li class="nav__navlist--work">
+                <a href="works/?filter=uiux">ＵＩデザイン</a>
+              </li>
+              <li class="nav__navlist--work">
+                <a href="works/?filter=graphic">グラフィックデザイン</a>
+              </li>
+              <li><a href="about/">わたしについて</a></li>
+              <li>
+                <a
+                  href="https://land-jj22.vivian.jp/blog/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >ブログ</a
+                >
+              </li>
+              <li>
+                <a href="mailto:riku.kishimoto22@gmail.com">お問い合わせ</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="toc-overlay"></div>
         </div>
-        <!-- <div class="cursor">
+      </div>
+      <!-- <div class="cursor">
             <div class="cursor__dot" id="cursorDot"></div>
             <div class="cursor__ring" id="cursorRing"></div>
         </div> -->
 
-        <section class="fv">
+      <section class="fv">
+        <nav class="fv__nav">
+          <div class="fv__nav-logo">R.FOLIO</div>
+        </nav>
 
-            <nav class="fv__nav">
-                <div class="fv__nav-logo">R.FOLIO</div>
-            </nav>
+        <div class="fv__wipe" id="wipe"></div>
 
-            <div class="fv__wipe" id="wipe"></div>
-
-            <div class="fv__slider">
-
-                <div class="fv__slide is-active" data-index="0">
-                    <div class="fv__img">
-                        <img src="images/top_fv.webp" alt="">
-                    </div>
-                    <div class="fv__content">
-                        <p class="fv__label">Portfolio 2026</p>
-                        <h1 class="fv__title--main">R.FOLIO</h1>
-                        <p class="fv__sub">Portfolio by Riku.</p>
-                    </div>
-                </div>
-
-
-                <div class="fv__slide" data-index="1">
-                    <div class="fv__img">
-                        <a href="works/hibiseitai/">
-                            <img src="images/hibi_fv.webp" alt="日比整体">
-                        </a>
-                    </div>
-                    <div class="fv__content">
-                        <a href="works/hibiseitai/">
-                            <h2 class="fv__title">日比整体 だいせんじ接骨院｜公式サイト</h2>
-                            <div class="fv__tag">
-                                <span>#Webデザイン</span>
-                                <span>#コーディング</span>
-                            </div>
-                            <p class="fv__text">「日比整体 だいせんじ接骨院」様のWebサイトのリニューアルを行いました。</p>
-                        </a>
-                        <a href="works/hibiseitai/" class="fv__arrow">
-                            <span class="fv__arrow-line"></span>
-                            詳しくみる
-                        </a>
-                    </div>
-                </div>
-
-                <div class="fv__slide" data-index="2">
-                    <div class="fv__img">
-                        <a href="works/blog/">
-                            <img src="images/r.log_fv.webp" alt="R.LOG">
-                        </a>
-                    </div>
-                    <div class="fv__content">
-                        <a href="works/blog/">
-                            <h2 class="fv__title">R.LOG｜オリジナルブログサイト</h2>
-                            <div class="fv__tag">
-                                <span>#Webデザイン</span>
-                                <span>#コーディング</span>
-                            </div>
-                            <p class="fv__text">1年生前期の集大成として制作したブログサイトです。</p>
-                        </a>
-                        <a href="works/blog/" class="fv__arrow">
-                            <span class="fv__arrow-line"></span>
-                            詳しくみる
-                        </a>
-                    </div>
-                </div>
-
+        <div class="fv__slider">
+          <div class="fv__slide is-active" data-index="0">
+            <div class="fv__img">
+              <img src="images/top_fv.webp" alt="" />
             </div>
-
-            <div class="fv__counter">
-                <span class="fv__counter-cur" id="counterCur">01</span>
-                <span class="fv__counter-sep">/</span>
-                <span class="fv__counter-total">03</span>
+            <div class="fv__content">
+              <p class="fv__label">Portfolio 2026</p>
+              <h1 class="fv__title--main">R.FOLIO</h1>
+              <p class="fv__sub">Portfolio by Riku.</p>
             </div>
+          </div>
 
-            <div class="fv__progress">
-                <div class="fv__bar">
-                    <span class="fv__bar-inner" id="barInner"></span>
-                </div>
-                <div class="fv__dots" id="dotsWrap">
-                    <button class="fv__dot is-active"></button>
-                    <button class="fv__dot"></button>
-                    <button class="fv__dot"></button>
-                </div>
+          <div class="fv__slide" data-index="1">
+            <div class="fv__img">
+              <a href="works/hibiseitai/">
+                <img src="images/hibi_fv.webp" alt="日比整体" />
+              </a>
             </div>
+            <div class="fv__content">
+              <a href="works/hibiseitai/">
+                <h2 class="fv__title">日比整体 だいせんじ接骨院｜公式サイト</h2>
+                <div class="fv__tag">
+                  <span>#Webデザイン</span>
+                  <span>#コーディング</span>
+                </div>
+                <p class="fv__text">
+                  「日比整体
+                  だいせんじ接骨院」様のWebサイトのリニューアルを行いました。
+                </p>
+              </a>
+              <a href="works/hibiseitai/" class="fv__arrow">
+                <span class="fv__arrow-line"></span>
+                詳しくみる
+              </a>
+            </div>
+          </div>
 
-            <div class="fv__drag"></div>
+          <div class="fv__slide" data-index="2">
+            <div class="fv__img">
+              <a href="works/blog/">
+                <img src="images/r.log_fv.webp" alt="R.LOG" />
+              </a>
+            </div>
+            <div class="fv__content">
+              <a href="works/blog/">
+                <h2 class="fv__title">R.LOG｜オリジナルブログサイト</h2>
+                <div class="fv__tag">
+                  <span>#Webデザイン</span>
+                  <span>#コーディング</span>
+                </div>
+                <p class="fv__text">
+                  1年生前期の集大成として制作したブログサイトです。
+                </p>
+              </a>
+              <a href="works/blog/" class="fv__arrow">
+                <span class="fv__arrow-line"></span>
+                詳しくみる
+              </a>
+            </div>
+          </div>
+        </div>
 
-        </section>
+        <div class="fv__counter">
+          <span class="fv__counter-cur" id="counterCur">01</span>
+          <span class="fv__counter-sep">/</span>
+          <span class="fv__counter-total">03</span>
+        </div>
+
+        <div class="fv__progress">
+          <div class="fv__bar">
+            <span class="fv__bar-inner" id="barInner"></span>
+          </div>
+          <div class="fv__dots" id="dotsWrap">
+            <button class="fv__dot is-active"></button>
+            <button class="fv__dot"></button>
+            <button class="fv__dot"></button>
+          </div>
+        </div>
+
+        <div class="fv__drag"></div>
+      </section>
     </header>
 
     <main class="top__main">
-        <div class="top__inner">
-            <section class="top__works" data-title="作ったもの・デザインしたもの">
-                <article class="post post--top" data-category="web">
-                    <a href="works/hibiseitai/">
-                        <div class="post__img">
-                            <img src="images/hibiseitai_cap.webp" alt="">
-                        </div>
-                    </a>
-                    <a href="works/hibiseitai/">
-                        <h2 class="post__title">【Webサイト】日比整体 だいせんじ接骨院</h2>
-                        <div class="post__tag">
-                            <p>#Webデザイン</p>
-                            <p>#コーディング</p>
-                        </div>
-                        <div class="post__text">
-                            <p>「日比整体 だいせんじ接骨院」様にご協力いただきサイトのリニューアルを行いました。</p>
-                        </div>
-                    </a>
-                </article>
-                <article class="post post--top" data-category="web">
-                    <a href="works/blog/">
-                        <div class="post__img">
-                            <img src="images/r.log_cap.webp" alt="">
-                        </div>
-                    </a>
-                    <a href="works/blog/">
-                        <h2 class="post__title">【Webサイト】R.LOG｜オリジナルブログサイト</h2>
-                        <div class="post__tag">
-                            <p>#Webデザイン</p>
-                            <p>#コーディング</p>
-                        </div>
-                        <div class="post__text">
-                            <p>1年生前期の集大成として制作したブログサイトです。</p>
-                        </div>
-                    </a>
-                </article>
-                <article class="post post--top" data-category="uiux">
-                    <a href="works/post/">
-                        <div class="post__img">
-                            <img src="images/post.webp" alt="">
-                        </div>
-                    </a>
-                    <a href="works/post/">
-                        <h2 class="post__title">【Webアプリ】ドットポスト｜ハッカソン作品</h2>
-                        <div class="post__tag">
-                            <p>#デザイン</p>
-                            <p>#ハッカソン</p>
-                        </div>
-                        <div class="post__text">
-                            <p>Web制作合宿2026で制作したWebアプリです。</p>
-                        </div>
-                    </a>
-                </article>
-                <article class="post post--top" data-category="web">
-                    <a href="works/wafu/">
-                        <div class="post__img">
-                            <img src="images/wafu.webp" alt="">
-                        </div>
-                    </a>
-                    <a href="works/wafu/">
-                        <h2 class="post__title">【Webサイト】宿坊レストラン虎威殿｜サイトデザイン</h2>
-                        <div class="post__tag">
-                            <p>#Webデザイン</p>
-                        </div>
-                        <div class="post__text">
-                            <p>「和風らしさ」をテーマに架空の宿坊レストラン「虎威殿」のサイトデザインを行いました。</p>
-                        </div>
-                    </a>
-                </article>
-                <a href="works/" class="btn-circle-arrow">
-                    一覧ページへ
-                    <span class="btn-circle-arrow__icon">
-                        <svg viewBox="0 0 40 40">
-                            <circle class="base" cx="20" cy="20" r="18"></circle>
-                            <circle class="main" cx="20" cy="20" r="18"></circle>
-                            <path d="M14 20 H26" />
-                            <path d="M22 16 L26 20 L22 24" />
-                        </svg>
-                    </span>
-                </a>
-            </section>
-            <section class="top__about about" data-title="わたしについて">
-                <div class="about__res">
-                    <div class="about__text">
-                        <h2>岸本璃空</h2>
-                        <p>トライデントコンピュータ専門学校 Webデザイン学科</p>
-                        <p>志望職種：Webデザイナー</p>
-                        <p>得意なデザイン分野：レイアウト・余白</p>
-                    </div>
-                    <div class="about__img about__img--top">
-                        <img src="images/mainvisual.webp" alt="">
-                    </div>
-                </div>
-            </section>
-            <a href="about/" class="btn-circle-arrow btn-circle-arrow--about">
-                詳しくみる
-                <span class="btn-circle-arrow__icon">
-                    <svg viewBox="0 0 40 40">
-                        <circle class="base" cx="20" cy="20" r="18"></circle>
-                        <circle class="main" cx="20" cy="20" r="18"></circle>
-                        <path d="M14 20 H26" />
-                        <path d="M22 16 L26 20 L22 24" />
-                    </svg>
-                </span>
+      <div class="top__inner">
+        <section class="top__works" data-title="作ったもの・デザインしたもの">
+          <article class="post post--top" data-category="web">
+            <a href="works/hibiseitai/">
+              <div class="post__img">
+                <img src="images/hibiseitai_cap.webp" alt="" />
+              </div>
             </a>
-        </div>
+            <a href="works/hibiseitai/">
+              <h2 class="post__title">
+                【Webサイト】日比整体 だいせんじ接骨院
+              </h2>
+              <div class="post__tag">
+                <p>#Webデザイン</p>
+                <p>#コーディング</p>
+              </div>
+              <div class="post__text">
+                <p>
+                  「日比整体
+                  だいせんじ接骨院」様にご協力いただきサイトのリニューアルを行いました。
+                </p>
+              </div>
+            </a>
+          </article>
+          <article class="post post--top" data-category="web">
+            <a href="works/blog/">
+              <div class="post__img">
+                <img src="images/r.log_cap.webp" alt="" />
+              </div>
+            </a>
+            <a href="works/blog/">
+              <h2 class="post__title">
+                【Webサイト】R.LOG｜オリジナルブログサイト
+              </h2>
+              <div class="post__tag">
+                <p>#Webデザイン</p>
+                <p>#コーディング</p>
+              </div>
+              <div class="post__text">
+                <p>1年生前期の集大成として制作したブログサイトです。</p>
+              </div>
+            </a>
+          </article>
+          <article class="post post--top" data-category="uiux">
+            <a href="works/post/">
+              <div class="post__img">
+                <img src="images/post.webp" alt="" />
+              </div>
+            </a>
+            <a href="works/post/">
+              <h2 class="post__title">
+                【Webアプリ】ドットポスト｜ハッカソン作品
+              </h2>
+              <div class="post__tag">
+                <p>#デザイン</p>
+                <p>#ハッカソン</p>
+              </div>
+              <div class="post__text">
+                <p>Web制作合宿2026で制作したWebアプリです。</p>
+              </div>
+            </a>
+          </article>
+          <article class="post post--top" data-category="web">
+            <a href="works/wafu/">
+              <div class="post__img">
+                <img src="images/wafu.webp" alt="" />
+              </div>
+            </a>
+            <a href="works/wafu/">
+              <h2 class="post__title">
+                【Webサイト】宿坊レストラン虎威殿｜サイトデザイン
+              </h2>
+              <div class="post__tag">
+                <p>#Webデザイン</p>
+              </div>
+              <div class="post__text">
+                <p>
+                  「和風らしさ」をテーマに架空の宿坊レストラン「虎威殿」のサイトデザインを行いました。
+                </p>
+              </div>
+            </a>
+          </article>
+          <a href="works/" class="btn-circle-arrow">
+            一覧ページへ
+            <span class="btn-circle-arrow__icon">
+              <svg viewBox="0 0 40 40">
+                <circle class="base" cx="20" cy="20" r="18"></circle>
+                <circle class="main" cx="20" cy="20" r="18"></circle>
+                <path d="M14 20 H26" />
+                <path d="M22 16 L26 20 L22 24" />
+              </svg>
+            </span>
+          </a>
+        </section>
+        <section class="top__about about" data-title="わたしについて">
+          <div class="about__res">
+            <div class="about__text">
+              <h2>岸本璃空</h2>
+              <p>トライデントコンピュータ専門学校 Webデザイン学科</p>
+              <p>志望職種：Webデザイナー</p>
+              <p>得意なデザイン分野：レイアウト・余白</p>
+            </div>
+            <div class="about__img about__img--top">
+              <img src="images/mainvisual.webp" alt="" />
+            </div>
+          </div>
+        </section>
+        <a href="about/" class="btn-circle-arrow btn-circle-arrow--about">
+          詳しくみる
+          <span class="btn-circle-arrow__icon">
+            <svg viewBox="0 0 40 40">
+              <circle class="base" cx="20" cy="20" r="18"></circle>
+              <circle class="main" cx="20" cy="20" r="18"></circle>
+              <path d="M14 20 H26" />
+              <path d="M22 16 L26 20 L22 24" />
+            </svg>
+          </span>
+        </a>
+      </div>
     </main>
 
     <footer class="footer">
-        <div class="footer__inner">
-            <nav class="nav">
-                <ul class="nav__navlist">
-                    <li><a href="./">トップ</a></li>
-                    <li><a href="works/">作ったもの・デザインしたもの</a></li>
-                    <li class="nav__navlist--work"><a href="works/?filter=web">Ｗｅｂデザイン</a></li>
-                    <li class="nav__navlist--work"><a href="works/?filter=uiux">ＵＩデザイン</a></li>
-                    <li class="nav__navlist--work"><a href="works/?filter=graphic">グラフィックデザイン</a></li>
-                    <li><a href="about/">わたしについて</a></li>
-                    <li><a href="https://land-jj22.vivian.jp/blog/" target="_blank" rel="noopener noreferrer">ブログ</a>
-                    </li>
-                    <li><a href="mailto:riku.kishimoto22@gmail.com">お問い合わせ</a></li>
-                </ul>
-            </nav>
-            <div class="footer__mail mail">
-                <a href="mailto:riku.kishimoto22@gmail.com">riku.kishimoto22@gmail.com</a>
-            </div>
-            <!-- <div class="git">
+      <div class="footer__inner">
+        <nav class="nav">
+          <ul class="nav__navlist">
+            <li><a href="./">トップ</a></li>
+            <li><a href="works/">作ったもの・デザインしたもの</a></li>
+            <li class="nav__navlist--work">
+              <a href="works/?filter=web">Ｗｅｂデザイン</a>
+            </li>
+            <li class="nav__navlist--work">
+              <a href="works/?filter=uiux">ＵＩデザイン</a>
+            </li>
+            <li class="nav__navlist--work">
+              <a href="works/?filter=graphic">グラフィックデザイン</a>
+            </li>
+            <li><a href="about/">わたしについて</a></li>
+            <li>
+              <a
+                href="https://land-jj22.vivian.jp/blog/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >ブログ</a
+              >
+            </li>
+            <li>
+              <a href="mailto:riku.kishimoto22@gmail.com">お問い合わせ</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="footer__mail mail">
+          <a href="mailto:riku.kishimoto22@gmail.com"
+            >riku.kishimoto22@gmail.com</a
+          >
+        </div>
+        <!-- <div class="git">
                 <div class="git__icon"><img src="./images/GitHub_Invertocat_Black.svg" alt=""></div>
                 <div class="git__text"><a href="https://github.com/Riku-Kishimoto">GitHub</a></div>
             </div> -->
-        </div>
-        <div class="footer__copy">
-            <p>&copy; R.FOLIO</p>
-        </div>
+      </div>
+      <div class="footer__copy">
+        <p>&copy; R.FOLIO</p>
+      </div>
     </footer>
     <script src="js/style.js"></script>
-</body>
-
+  </body>
 </html>

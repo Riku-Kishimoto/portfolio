@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // 初期表示
   posts.forEach((post) => {
     if (currentFilter === "all" || post.dataset.category === currentFilter) {
-      post.style.display = "block";
+      post.style.removeProperty("display");
     } else {
       post.style.display = "none";
     }
@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // 表示切り替え
       posts.forEach((post) => {
         if (category === "all" || post.dataset.category === category) {
-          post.style.display = "block";
+          post.style.removeProperty("display");
         } else {
           post.style.display = "none";
         }
