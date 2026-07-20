@@ -119,9 +119,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // URLを書き換える
       if (category === "all") {
-        history.pushState(null, "", window.location.pathname);
+        history.pushState(null, "", "/portfolio/works/");
       } else {
-        history.pushState(null, "", `?filter=${category}`);
+        history.pushState(null, "", `/portfolio/works/?filter=${category}`);
       }
 
       // 表示切り替え
